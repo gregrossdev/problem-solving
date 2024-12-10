@@ -61,4 +61,23 @@ public class Warmup {
 
 		return absoluteDiff;
 	}
+
+	// https://www.hackerrank.com/challenges/plus-minus/problem?isFullScreen=true
+	public void plusMinus(List<Integer> arr) {
+		int totalValues = arr.size();
+		double positiveValues = 0;
+		double negativeValues = 0;
+		double zeroValues     = 0;
+
+		for (int value : arr) {
+			if (value > 0) positiveValues++;
+			else if (value < 0) negativeValues++;
+			else zeroValues++;
+		}
+
+		System.out.printf("%.6f%n", positiveValues/totalValues);
+		System.out.printf("%.6f%n", negativeValues/totalValues);
+		System.out.printf("%.6f%n",     zeroValues/totalValues);
+
+	}
 }

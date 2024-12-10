@@ -66,4 +66,18 @@ class WarmupTest {
 					Arrays.asList(4, 4, -2, 1)
         )));
     }
+
+    @Test
+    void plusMinusTest() {
+        // Test case with positive, negative, and zero values
+        warmup.plusMinus(Arrays.asList(-4, 3, -9, 0, 4, 1));
+        // Test case with all positive values
+        warmup.plusMinus(Arrays.asList(1, 2, 3, 4, 5));
+        // Test case with all negative values
+        warmup.plusMinus(Arrays.asList(-1, -2, -3, -4, -5));
+        // Test case with all zero values
+        warmup.plusMinus(Arrays.asList(0, 0, 0, 0, 0));
+        // Test case with mixed values
+        warmup.plusMinus(Arrays.asList(1, -1, 0, 1, -1, 0));
+    }
 }
