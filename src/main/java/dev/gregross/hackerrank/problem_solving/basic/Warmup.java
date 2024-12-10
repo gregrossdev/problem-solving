@@ -80,4 +80,18 @@ public class Warmup {
 		System.out.printf("%.6f%n",     zeroValues/totalValues);
 
 	}
+
+	// https://www.hackerrank.com/challenges/staircase/problem?isFullScreen=true
+	public void staircase(int n) {
+		int spaces = 0;
+		int hashes = 1;
+		while(hashes <= n) {
+			spaces = n - hashes;
+			for(int i = 0; i < spaces; i++) System.out.print(" ");
+			for(int i = 0; i < hashes; i++) System.out.print("#");
+			System.out.println();
+			hashes++;
+		}
+
+	}
 }

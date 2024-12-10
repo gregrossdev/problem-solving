@@ -80,4 +80,27 @@ class WarmupTest {
         // Test case with mixed values
         warmup.plusMinus(Arrays.asList(1, -1, 0, 1, -1, 0));
     }
+
+    @Test
+    void staircaseTest() {
+        // Test case with n = 1
+        System.out.println("Expected Output:\n#");
+        warmup.staircase(1);
+
+        // Test case with n = 2
+        System.out.println("Expected Output:\n #\n##");
+        warmup.staircase(2);
+
+        // Test case with n = 3
+        System.out.println("Expected Output:\n  #\n ##\n###");
+        warmup.staircase(3);
+
+        // Test case with n = 4
+        System.out.println("Expected Output:\n   #\n  ##\n ###\n####");
+        warmup.staircase(4);
+
+        // Test case with n = 5
+        System.out.println("Expected Output:\n    #\n   ##\n  ###\n ####\n#####");
+        warmup.staircase(5);
+    }
 }
