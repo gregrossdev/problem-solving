@@ -42,4 +42,23 @@ public class Warmup {
 
 		return sum;
 	}
+
+	// https://www.hackerrank.com/challenges/diagonal-difference/problem?isFullScreen=true
+	public int diagonalDifference(List<List<Integer>> arr) {
+		int absoluteDiff = 0;
+		int index = 0;
+
+		int ltr = 0;
+		int rtl = 0;
+		int end = arr.size() - 1;
+		while (index < arr.size()) {
+			ltr += arr.get(index).get(index);
+			rtl += arr.get(index).get(end - index);
+			index++;
+		}
+
+		absoluteDiff = Math.abs(ltr - rtl);
+
+		return absoluteDiff;
+	}
 }
