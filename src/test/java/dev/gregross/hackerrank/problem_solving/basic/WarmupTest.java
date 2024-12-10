@@ -103,4 +103,27 @@ class WarmupTest {
         System.out.println("Expected Output:\n    #\n   ##\n  ###\n ####\n#####");
         warmup.staircase(5);
     }
+
+    @Test
+    void miniMaxSumTest() {
+        // Test case with distinct values
+        System.out.println("Expected Output: 10 14");
+        warmup.miniMaxSum(Arrays.asList(1, 2, 3, 4, 5));
+
+        // Test case with all same values
+        System.out.println("Expected Output: 4 4");
+        warmup.miniMaxSum(Arrays.asList(1, 1, 1, 1, 1));
+
+        // Test case with minimum and maximum integer values
+        System.out.println("Expected Output: -9223372036854775808 9223372036854775807");
+        warmup.miniMaxSum(Arrays.asList(Integer.MIN_VALUE, Integer.MAX_VALUE, 0, 0, 0));
+
+        // Test case with negative values
+        System.out.println("Expected Output: -14 -10");
+        warmup.miniMaxSum(Arrays.asList(-1, -2, -3, -4, -5));
+
+        // Test case with mixed values
+        System.out.println("Expected Output: 6 24");
+        warmup.miniMaxSum(Arrays.asList(1, 2, 3, 4, 14));
+    }
 }

@@ -94,4 +94,22 @@ public class Warmup {
 		}
 
 	}
+
+	// https://www.hackerrank.com/challenges/mini-max-sum/problem?isFullScreen=true
+	public void miniMaxSum(List<Integer> arr) {
+		int min = Integer.MAX_VALUE;
+		int max = 0;
+		long totalSum = 0;
+
+		for (int currentNumber : arr) {
+			totalSum += currentNumber;
+			if (currentNumber > max) max = currentNumber;
+			if (currentNumber < min) min = currentNumber;
+		}
+
+		long minSum = totalSum - max;
+		long maxSum = totalSum - min;
+
+		System.out.println(minSum + " " + maxSum);
+	}
 }
