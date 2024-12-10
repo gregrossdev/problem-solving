@@ -35,4 +35,12 @@ class Kyu7Test {
 		assertEquals(9414, kyu7.squareDigits(3212));
 	}
 
+	@Test
+	void highAndLowTests() {
+		assertEquals("5 1", kyu7.highAndLow("1 2 3 4 5"));
+		assertEquals("5 -3", kyu7.highAndLow("1 2 -3 4 5"));
+		assertEquals("9 0", kyu7.highAndLow("0 9 8 7 6 5 4 3 2 1"));
+		assertEquals("1 1", kyu7.highAndLow("1 1 1 1 1"));
+		assertEquals("-1 -1", kyu7.highAndLow("-1 -1 -1 -1 -1"));
+	}
 }

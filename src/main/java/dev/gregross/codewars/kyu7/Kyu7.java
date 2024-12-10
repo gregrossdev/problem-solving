@@ -1,5 +1,8 @@
 package dev.gregross.codewars.kyu7;
 
+import java.util.Arrays;
+import java.util.NoSuchElementException;
+
 public class Kyu7 {
 
 	// https://www.codewars.com/kata/54ff3102c1bad923760001f3/solutions/java?filter=me&sort=best_practice&invalids=false
@@ -35,6 +38,18 @@ public class Kyu7 {
 		return Integer.parseInt(result); // Convert concatenated result back to integer
 	}
 
+	// https://www.codewars.com/kata/554b4ac871d6813a03000035/solutions/java?filter=me&sort=best_practice&invalids=false
+	public String highAndLow(String numbers) {
+		// split string into integers
+		int[] nums = Arrays.stream(numbers.split(" "))
+			.mapToInt(Integer::parseInt)
+			.toArray();
 
+		int max = Arrays.stream(nums).max().orElseThrow(NoSuchElementException::new);
+		int min = Arrays.stream(nums).min().orElseThrow(NoSuchElementException::new);
+
+		return max + " " + min;
+
+	}
 
 }
