@@ -2,6 +2,8 @@ package dev.gregross.codewars.kyu7;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class Kyu7Test {
@@ -51,5 +53,14 @@ class Kyu7Test {
 		assertEquals(0, kyu7.sortDesc(0));
 		assertEquals(987, kyu7.sortDesc(789));
 		assertEquals(54321, kyu7.sortDesc(12345));
+	}
+
+	@Test
+	void filterListTests() {
+		assertEquals(Arrays.asList(1, 2, 3), kyu7.filterList(Arrays.asList(1, 2, "a", "b", 3)));
+		assertEquals(Arrays.asList(1, 0, 15), kyu7.filterList(Arrays.asList(1, "a", "b", 0, 15)));
+		assertEquals(Arrays.asList(1, 2, 123), kyu7.filterList(Arrays.asList(1, 2, "aasf", "1", "123", 123)));
+		assertEquals(Arrays.asList(), kyu7.filterList(Arrays.asList("a", "b", "c")));
+		assertEquals(Arrays.asList(1, 2, 3, 4), kyu7.filterList(Arrays.asList(1, 2, 3, 4)));
 	}
 }

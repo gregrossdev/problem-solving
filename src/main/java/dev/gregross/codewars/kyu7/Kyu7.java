@@ -1,6 +1,7 @@
 package dev.gregross.codewars.kyu7;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
@@ -65,6 +66,14 @@ public class Kyu7 {
 
 		return Integer.parseInt(str);
 
+	}
+
+	// https://www.codewars.com/kata/53dbd5315a3c69eed20002dd/solutions/java?filter=me&sort=best_practice&invalids=false
+	public List<Object> filterList(final List<Object> list) {
+		return list
+			.stream()
+			.filter(str -> !(str instanceof String))
+			.collect(Collectors.toList());
 	}
 
 }
