@@ -22,4 +22,19 @@ public class Kyu7 {
 
 		return newStr.toString();
 	}
+
+	// https://www.codewars.com/kata/546e2562b03326a88e000020/solutions/java?filter=me&sort=best_practice&invalids=false
+	public int squareDigits(int n) {
+		String result = String.valueOf(n) // Convert number to string
+			.chars() // Convert to IntStream of characters (ASCII values)
+			.map(ch -> ch - '0') // Convert char to numeric value
+			.map(chInt -> chInt * chInt) // Square each numeric value
+			.mapToObj(String::valueOf) // Convert each square to string
+			.reduce("", String::concat); // Concatenate all squared strings
+
+		return Integer.parseInt(result); // Convert concatenated result back to integer
+	}
+
+
+
 }
