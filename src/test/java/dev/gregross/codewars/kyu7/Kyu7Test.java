@@ -43,4 +43,13 @@ class Kyu7Test {
 		assertEquals("1 1", kyu7.highAndLow("1 1 1 1 1"));
 		assertEquals("-1 -1", kyu7.highAndLow("-1 -1 -1 -1 -1"));
 	}
+
+	@Test
+	void sortDescTests() {
+		assertEquals(987654321, kyu7.sortDesc(123456789));
+		assertEquals(321, kyu7.sortDesc(213));
+		assertEquals(0, kyu7.sortDesc(0));
+		assertEquals(987, kyu7.sortDesc(789));
+		assertEquals(54321, kyu7.sortDesc(12345));
+	}
 }

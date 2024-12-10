@@ -2,6 +2,7 @@ package dev.gregross.codewars.kyu7;
 
 import java.util.Arrays;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 public class Kyu7 {
 
@@ -49,6 +50,20 @@ public class Kyu7 {
 		int min = Arrays.stream(nums).min().orElseThrow(NoSuchElementException::new);
 
 		return max + " " + min;
+
+	}
+
+	// https://www.codewars.com/kata/5467e4d82edf8bbf40000155/solutions/java?filter=me&sort=best_practice&invalids=false
+	public int sortDesc(final int num) {
+		String str = String.valueOf(num)
+			.chars()
+			.map(ch -> ch - '0')
+			.boxed()
+			.sorted((a,b) -> b - a) // desc order
+			.map(String::valueOf)
+			.collect(Collectors.joining());
+
+		return Integer.parseInt(str);
 
 	}
 
