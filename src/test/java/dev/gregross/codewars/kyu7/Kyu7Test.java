@@ -63,4 +63,12 @@ class Kyu7Test {
 		assertEquals(Arrays.asList(), kyu7.filterList(Arrays.asList("a", "b", "c")));
 		assertEquals(Arrays.asList(1, 2, 3, 4), kyu7.filterList(Arrays.asList(1, 2, 3, 4)));
 	}
+
+	@Test
+	void getMiddleTests() {
+		assertEquals("es", kyu7.getMiddle("test"));
+		assertEquals("dd", kyu7.getMiddle("middle"));
+		assertEquals("t", kyu7.getMiddle("testing"));
+		assertEquals("A", kyu7.getMiddle("A"));
+	}
 }
