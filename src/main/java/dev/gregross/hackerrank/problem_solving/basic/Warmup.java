@@ -112,4 +112,23 @@ public class Warmup {
 
 		System.out.println(minSum + " " + maxSum);
 	}
+
+	// https://www.hackerrank.com/challenges/birthday-cake-candles/problem?isFullScreen=true
+	public int birthdayCakeCandles(List<Integer> candles) {
+		int howMany = 0;
+		int max = Integer.MIN_VALUE;
+
+		for (Integer candle : candles) {
+			if(candle > max) {
+				max = candle;
+				howMany = 1;
+			}
+			else if(candle == max) {
+				howMany++;
+			}
+		}
+
+
+		return howMany;
+	}
 }

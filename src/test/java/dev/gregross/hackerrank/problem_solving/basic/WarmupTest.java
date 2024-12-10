@@ -126,4 +126,22 @@ class WarmupTest {
         System.out.println("Expected Output: 6 24");
         warmup.miniMaxSum(Arrays.asList(1, 2, 3, 4, 14));
     }
+
+    @Test
+    void birthdayCakeCandlesTest() {
+        // Test case with multiple tallest candles
+        assertEquals(2, warmup.birthdayCakeCandles(Arrays.asList(3, 2, 1, 3)));
+
+        // Test case with all candles of the same height
+        assertEquals(5, warmup.birthdayCakeCandles(Arrays.asList(1, 1, 1, 1, 1)));
+
+        // Test case with only one candle
+        assertEquals(1, warmup.birthdayCakeCandles(Arrays.asList(5)));
+
+        // Test case with no candles
+        assertEquals(0, warmup.birthdayCakeCandles(Arrays.asList()));
+
+        // Test case with negative and positive heights
+        assertEquals(1, warmup.birthdayCakeCandles(Arrays.asList(-1, -2, -3, 0, 1)));
+    }
 }
