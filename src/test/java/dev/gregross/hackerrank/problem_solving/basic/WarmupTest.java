@@ -33,4 +33,12 @@ class WarmupTest {
 		assertEquals(Arrays.asList(3, 0), warmup.compareTriplets(Arrays.asList(10, 20, 30), Arrays.asList(1, 2, 3)));
 		assertEquals(Arrays.asList(0, 3), warmup.compareTriplets(Arrays.asList(1, 2, 3), Arrays.asList(10, 20, 30)));
 	}
+
+	@Test
+	void aVeryBigSumTest() {
+		assertEquals(5000000000L, warmup.aVeryBigSum(Arrays.asList(1000000000L, 1000000000L, 1000000000L, 1000000000L, 1000000000L)));
+		assertEquals(0L, warmup.aVeryBigSum(Arrays.asList()));
+		assertEquals(-6L, warmup.aVeryBigSum(Arrays.asList(-1L, -2L, -3L)));
+		assertEquals(15L, warmup.aVeryBigSum(Arrays.asList(1L, 2L, 3L, 4L, 5L)));
+	}
 }

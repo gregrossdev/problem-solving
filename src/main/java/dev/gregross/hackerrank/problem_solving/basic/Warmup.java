@@ -34,4 +34,12 @@ public class Warmup {
 		scores.add(bobScore);
 		return scores;
 	}
+
+	// https://www.hackerrank.com/challenges/a-very-big-sum/problem?isFullScreen=true
+	public long aVeryBigSum(List<Long> ar) {
+		long sum = 0;
+		for (Long num: ar) sum += num;
+
+		return sum;
+	}
 }
