@@ -25,4 +25,12 @@ class WarmupTest {
 		assertEquals(-6, warmup.simpleArraySum(Arrays.asList(-1, -2, -3)));
 		assertEquals(15, warmup.simpleArraySum(Arrays.asList(1, 2, 3, 4, 5)));
 	}
+
+	@Test
+	void compareTripletsTest() {
+		assertEquals(Arrays.asList(1, 1), warmup.compareTriplets(Arrays.asList(5, 6, 7), Arrays.asList(3, 6, 10)));
+		assertEquals(Arrays.asList(0, 0), warmup.compareTriplets(Arrays.asList(1, 1, 1), Arrays.asList(1, 1, 1)));
+		assertEquals(Arrays.asList(3, 0), warmup.compareTriplets(Arrays.asList(10, 20, 30), Arrays.asList(1, 2, 3)));
+		assertEquals(Arrays.asList(0, 3), warmup.compareTriplets(Arrays.asList(1, 2, 3), Arrays.asList(10, 20, 30)));
+	}
 }

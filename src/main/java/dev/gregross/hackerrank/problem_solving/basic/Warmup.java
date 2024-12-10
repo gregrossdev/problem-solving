@@ -1,5 +1,6 @@
 package dev.gregross.hackerrank.problem_solving.basic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Warmup {
@@ -15,5 +16,22 @@ public class Warmup {
 		for (Integer num : ar) sum += num;
 
 		return sum;
+	}
+
+	// https://www.hackerrank.com/challenges/compare-the-triplets?isFullScreen=true
+	public List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
+		List<Integer> scores = new ArrayList<>();
+		int aliceScore = 0;
+		int bobScore = 0;
+		for (int idx = 0; idx < a.size(); idx++) {
+			int alice = a.get(idx);
+			int bob   = b.get(idx);
+			if(alice > bob) aliceScore++;
+			else if(alice < bob) bobScore++;
+		}
+
+		scores.add(aliceScore);
+		scores.add(bobScore);
+		return scores;
 	}
 }
