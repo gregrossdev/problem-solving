@@ -11,7 +11,7 @@ class WarmupTest {
     Warmup warmup = new Warmup();
 
     @Test
-    void solveMeFirstTest() {
+    void solveMeFirstTests() {
         assertEquals(5, warmup.solveMeFirst(2, 3));
         assertEquals(0, warmup.solveMeFirst(0, 0));
         assertEquals(-1, warmup.solveMeFirst(-2, 1));
@@ -19,7 +19,7 @@ class WarmupTest {
     }
 
     @Test
-    void simpleArraySumTest() {
+    void simpleArraySumTests() {
         assertEquals(6, warmup.simpleArraySum(Arrays.asList(1, 2, 3)));
         assertEquals(0, warmup.simpleArraySum(Arrays.asList()));
         assertEquals(-6, warmup.simpleArraySum(Arrays.asList(-1, -2, -3)));
@@ -27,7 +27,7 @@ class WarmupTest {
     }
 
     @Test
-    void compareTripletsTest() {
+    void compareTripletsTests() {
         assertEquals(Arrays.asList(1, 1), warmup.compareTriplets(Arrays.asList(5, 6, 7), Arrays.asList(3, 6, 10)));
         assertEquals(Arrays.asList(0, 0), warmup.compareTriplets(Arrays.asList(1, 1, 1), Arrays.asList(1, 1, 1)));
         assertEquals(Arrays.asList(3, 0), warmup.compareTriplets(Arrays.asList(10, 20, 30), Arrays.asList(1, 2, 3)));
@@ -35,7 +35,7 @@ class WarmupTest {
     }
 
     @Test
-    void aVeryBigSumTest() {
+    void aVeryBigSumTests() {
         assertEquals(5000000000L, warmup.aVeryBigSum(Arrays.asList(1000000000L, 1000000000L, 1000000000L, 1000000000L, 1000000000L)));
         assertEquals(0L, warmup.aVeryBigSum(Arrays.asList()));
         assertEquals(-6L, warmup.aVeryBigSum(Arrays.asList(-1L, -2L, -3L)));
@@ -43,7 +43,7 @@ class WarmupTest {
     }
 
     @Test
-    void diagonalDifferenceTest() {
+    void diagonalDifferenceTests() {
         assertEquals(15, warmup.diagonalDifference(Arrays.asList(
             Arrays.asList(11, 2, 4),
             Arrays.asList(4, 5, 6),
@@ -68,7 +68,7 @@ class WarmupTest {
     }
 
     @Test
-    void plusMinusTest() {
+    void plusMinusTests() {
         // Test case with positive, negative, and zero values
         warmup.plusMinus(Arrays.asList(-4, 3, -9, 0, 4, 1));
         // Test case with all positive values
@@ -82,7 +82,7 @@ class WarmupTest {
     }
 
     @Test
-    void staircaseTest() {
+    void staircaseTests() {
         // Test case with n = 1
         System.out.println("Expected Output:\n#");
         warmup.staircase(1);
@@ -105,7 +105,7 @@ class WarmupTest {
     }
 
     @Test
-    void miniMaxSumTest() {
+    void miniMaxSumTests() {
         // Test case with distinct values
         System.out.println("Expected Output: 10 14");
         warmup.miniMaxSum(Arrays.asList(1, 2, 3, 4, 5));
@@ -128,7 +128,7 @@ class WarmupTest {
     }
 
     @Test
-    void birthdayCakeCandlesTest() {
+    void birthdayCakeCandlesTests() {
         // Test case with multiple tallest candles
         assertEquals(2, warmup.birthdayCakeCandles(Arrays.asList(3, 2, 1, 3)));
 
@@ -143,5 +143,15 @@ class WarmupTest {
 
         // Test case with negative and positive heights
         assertEquals(1, warmup.birthdayCakeCandles(Arrays.asList(-1, -2, -3, 0, 1)));
+    }
+
+    @Test
+    void timeConversionTests() {
+      assertEquals("12:01:00", warmup.timeConversion("12:01:00PM"));
+      assertEquals("00:01:00", warmup.timeConversion("12:01:00AM"));
+      assertEquals("13:05:45", warmup.timeConversion("01:05:45PM"));
+      assertEquals("01:05:45", warmup.timeConversion("01:05:45AM"));
+      assertEquals("23:59:59", warmup.timeConversion("11:59:59PM"));
+      assertEquals("11:59:59", warmup.timeConversion("11:59:59AM"));
     }
 }

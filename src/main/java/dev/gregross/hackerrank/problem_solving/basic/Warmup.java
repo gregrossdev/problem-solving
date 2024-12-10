@@ -131,4 +131,20 @@ public class Warmup {
 
 		return howMany;
 	}
+
+	// https://www.hackerrank.com/challenges/time-conversion/problem?isFullScreen=true
+	public String timeConversion(String s) {
+		String timeOfDay = s.substring(s.length() - 2);
+		String formattedTime;
+
+		int hour = Integer.parseInt(s.substring(0, 2));
+		if (timeOfDay.equals("PM")) {
+			formattedTime = (hour == 12) ? s.substring(0, 8) : String.format("%02d%s", hour + 12, s.substring(2, 8));
+		}
+		else {
+			formattedTime = (hour == 12) ? String.format("%02d%s", 0, s.substring(2, 8)) : s.substring(0, 8);
+		}
+
+		return formattedTime;
+	}
 }
