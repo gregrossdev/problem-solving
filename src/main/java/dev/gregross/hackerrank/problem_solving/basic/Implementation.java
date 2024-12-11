@@ -20,4 +20,24 @@ public class Implementation {
 
 		return roundedGrades;
 	}
+
+	// https://www.hackerrank.com/challenges/apple-and-orange/problem?isFullScreen=true
+	public static void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
+		int noOfApples  = 0;
+		int noOfOranges = 0;
+
+		for (int apple : apples) {
+			int posDist = a + apple;
+			if(posDist >= s && posDist <= t) noOfApples++;
+		}
+
+		for (int orange : oranges) {
+			int posDist = b + orange;
+			if(posDist >= s && posDist <= t) noOfOranges++;
+		}
+
+		System.out.println(noOfApples);
+		System.out.println(noOfOranges);
+	}
+
 }
