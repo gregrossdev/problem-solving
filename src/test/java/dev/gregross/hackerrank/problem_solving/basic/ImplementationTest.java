@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ImplementationTest {
 
 	@Test
-	void gradingStudentsTests() {
+	void testGradingStudents() {
 		List<Integer> grades = Arrays.asList(73, 67, 38, 33);
 		List<Integer> expected = Arrays.asList(75, 67, 40, 33);
 		List<Integer> result = Implementation.gradingStudents(grades);
@@ -20,7 +20,7 @@ class ImplementationTest {
 	}
 
 	@Test
-	void countApplesAndOrangesTests() {
+	void testCountApplesAndOranges() {
 		List<Integer> apples = Arrays.asList(-2, 2, 1);
 		List<Integer> oranges = Arrays.asList(5, -6);
 		int s = 7, t = 11, a = 5, b = 15;
