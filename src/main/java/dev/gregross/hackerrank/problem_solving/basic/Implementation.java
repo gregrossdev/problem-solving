@@ -40,4 +40,23 @@ public class Implementation {
 		System.out.println(noOfOranges);
 	}
 
+	// https://www.hackerrank.com/challenges/kangaroo/problem?isFullScreen=true
+	public static String kangaroo(int x1, int v1, int x2, int v2) {
+		// check if both kangaroos end in the same location
+		int kangaroo1 = x1;
+		int kangaroo2 = x2;
+		int maxJumps = 10000;
+		int jumps = 0;
+		while (jumps < maxJumps) {
+			kangaroo1 += v1;
+			kangaroo2 += v2;
+
+			if(kangaroo1 == kangaroo2) return "YES";
+
+			jumps++;
+		}
+
+		return "NO";
+	}
+
 }

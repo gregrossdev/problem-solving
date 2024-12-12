@@ -37,4 +37,14 @@ class ImplementationTest {
 		String expectedOutput = "1\n1\n";
 		assertEquals(expectedOutput, outContent.toString());
 	}
+
+	@Test
+	void testKangaroo() {
+			assertEquals("YES", Implementation.kangaroo(0, 3, 4, 2));
+			assertEquals("NO", Implementation.kangaroo(0, 2, 5, 3));
+			assertEquals("NO", Implementation.kangaroo(21, 6, 47, 3));
+			assertEquals("YES", Implementation.kangaroo(14, 4, 98, 2));
+	}
+
+
 }
