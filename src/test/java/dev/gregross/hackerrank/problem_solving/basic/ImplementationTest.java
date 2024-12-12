@@ -47,4 +47,24 @@ class ImplementationTest {
 	}
 
 
+	@Test
+	void testGetTotalX() {
+			List<Integer> a = Arrays.asList(2, 4);
+			List<Integer> b = Arrays.asList(16, 32, 96);
+			int expected = 3;
+			int result = Implementation.getTotalX(a, b);
+			assertEquals(expected, result);
+
+			a = Arrays.asList(3, 4);
+			b = Arrays.asList(24, 48);
+			expected = 2;
+			result = Implementation.getTotalX(a, b);
+			assertEquals(expected, result);
+
+			a = Arrays.asList(1);
+			b = Arrays.asList(100);
+			expected = 9;
+			result = Implementation.getTotalX(a, b);
+			assertEquals(expected, result);
+	}
 }
