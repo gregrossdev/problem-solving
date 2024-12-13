@@ -285,4 +285,13 @@ class ImplementationTest {
 			assertEquals(expected, result);
 	}
 
+	@Test
+	void testUtopianTree() {
+			assertEquals(1, Implementation.utopianTree(0));
+			assertEquals(2, Implementation.utopianTree(1));
+			assertEquals(7, Implementation.utopianTree(4));
+			assertEquals(6, Implementation.utopianTree(3));
+			assertEquals(14, Implementation.utopianTree(5));
+	}
+
 }
