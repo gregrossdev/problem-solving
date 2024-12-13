@@ -546,4 +546,14 @@ public class Implementation {
 		return "Yes";
 	}
 
+	// https://www.hackerrank.com/challenges/sherlock-and-squares/problem?isFullScreen=true
+	public static int squares(int a, int b) {
+		// determine the number of square integers within range of a to b
+		int sqrtA = (int) Math.ceil(Math.sqrt(a));
+		int sqrtB = (int) Math.floor(Math.sqrt(b));
+
+		// Count the number of square integers between sqrtA and sqrtB
+		return sqrtB - sqrtA + 1;
+	}
+
 }

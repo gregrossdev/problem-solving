@@ -409,4 +409,12 @@ class ImplementationTest {
 			assertEquals("Yes", Implementation.appendAndDelete("abc", "def", 6));
 	}
 
+	@Test
+	void testSquares() {
+		assertEquals(2, Implementation.squares(3, 9));
+		assertEquals(0, Implementation.squares(17, 24));
+		assertEquals(1, Implementation.squares(1, 1));
+		assertEquals(22, Implementation.squares(1, 500));
+	}
+
 }
