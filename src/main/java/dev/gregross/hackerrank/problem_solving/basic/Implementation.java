@@ -574,4 +574,29 @@ public class Implementation {
 		return fine;
 	}
 
+	// https://www.hackerrank.com/challenges/cut-the-sticks/problem?isFullScreen=true
+	public static List<Integer> cutTheSticks(List<Integer> arr) {
+		// Sort the list in non-decreasing order
+		Collections.sort(arr);
+
+		List<Integer> result = new ArrayList<>();
+		int n = arr.size();
+		int i = 0;
+
+		while (i < n) {
+			// Add the number of remaining sticks to the result list
+			result.add(n - i);
+
+			// Find the length of the current smallest stick
+			int minStick = arr.get(i);
+
+			// Skip sticks with the same length as the current smallest stick
+			while (i < n && arr.get(i) == minStick) {
+				i++;
+			}
+		}
+
+		return result;
+	}
+
 }

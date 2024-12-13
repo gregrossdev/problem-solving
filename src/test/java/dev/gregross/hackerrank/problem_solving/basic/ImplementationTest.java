@@ -424,4 +424,22 @@ class ImplementationTest {
 		assertEquals(0, Implementation.libraryFine(6, 6, 2015, 6, 6, 2015));
 		assertEquals(10000, Implementation.libraryFine(1, 1, 2016, 31, 12, 2015));
 	}
+
+	@Test
+	void testCutTheSticks() {
+		List<Integer> arr = Arrays.asList(5, 4, 4, 2, 2, 8);
+		List<Integer> expected = Arrays.asList(6, 4, 2, 1);
+		List<Integer> result = Implementation.cutTheSticks(arr);
+		assertEquals(expected, result);
+
+		arr = Arrays.asList(1, 2, 3, 4, 3, 3, 2, 1);
+		expected = Arrays.asList(8, 6, 4, 1);
+		result = Implementation.cutTheSticks(arr);
+		assertEquals(expected, result);
+
+		arr = Arrays.asList(1, 1, 1, 1);
+		expected = Arrays.asList(4);
+		result = Implementation.cutTheSticks(arr);
+		assertEquals(expected, result);
+	}
 }
