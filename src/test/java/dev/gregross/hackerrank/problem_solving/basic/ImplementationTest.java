@@ -214,6 +214,11 @@ class ImplementationTest {
 			assertEquals(0, Implementation.pageCount(5, 4));
 	}
 
-
+	@Test
+	void testCountingValleys() {
+			assertEquals(1, Implementation.countingValleys(8, "UDDDUDUU"));
+			assertEquals(2, Implementation.countingValleys(12, "DDUUDDUDUUUD"));
+			assertEquals(0, Implementation.countingValleys(10, "UUUUUUUUUU"));
+	}
 
 }
