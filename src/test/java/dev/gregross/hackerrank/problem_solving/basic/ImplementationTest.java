@@ -417,4 +417,11 @@ class ImplementationTest {
 		assertEquals(22, Implementation.squares(1, 500));
 	}
 
+	@Test
+	void testLibraryFine() {
+		assertEquals(45, Implementation.libraryFine(9, 6, 2015, 6, 6, 2015));
+		assertEquals(0, Implementation.libraryFine(6, 6, 2015, 9, 6, 2015));
+		assertEquals(0, Implementation.libraryFine(6, 6, 2015, 6, 6, 2015));
+		assertEquals(10000, Implementation.libraryFine(1, 1, 2016, 31, 12, 2015));
+	}
 }
