@@ -147,5 +147,13 @@ class ImplementationTest {
 			assertEquals(expected, result);
 	}
 
+	@Test
+	void testDayOfProgrammer() {
+			assertEquals("13.09.2017", Implementation.dayOfProgrammer(2017));
+			assertEquals("12.09.2016", Implementation.dayOfProgrammer(2016));
+			assertEquals("26.09.1918", Implementation.dayOfProgrammer(1918));
+			assertEquals("12.09.2000", Implementation.dayOfProgrammer(2000));
+			assertEquals("13.09.2100", Implementation.dayOfProgrammer(2100));
+	}
 
 }
