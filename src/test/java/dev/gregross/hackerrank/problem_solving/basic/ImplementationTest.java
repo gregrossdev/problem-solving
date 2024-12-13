@@ -450,4 +450,22 @@ class ImplementationTest {
 		assertEquals(0, Implementation.repeatedString("b", 1000000000000L));
 	}
 
+	@Test
+	void testJumpingOnCloudsAdv() {
+		List<Integer> clouds = Arrays.asList(0, 0, 1, 0, 0, 1, 0);
+		int expected = 4;
+		int result = Implementation.jumpingOnClouds(clouds);
+		assertEquals(expected, result);
+
+		clouds = Arrays.asList(0, 0, 0, 0, 1, 0);
+		expected = 3;
+		result = Implementation.jumpingOnClouds(clouds);
+		assertEquals(expected, result);
+
+		clouds = Arrays.asList(0, 0, 0, 1, 0, 0);
+		expected = 3;
+		result = Implementation.jumpingOnClouds(clouds);
+		assertEquals(expected, result);
+	}
+
 }
