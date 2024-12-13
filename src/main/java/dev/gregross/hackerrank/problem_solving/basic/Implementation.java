@@ -1,9 +1,6 @@
 package dev.gregross.hackerrank.problem_solving.basic;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Implementation {
 
@@ -434,6 +431,33 @@ public class Implementation {
 
 		// Return the chair number of the last prisoner to receive candy
 		return chair;
+	}
+
+	// https://www.hackerrank.com/challenges/circular-array-rotation/problem?isFullScreen=true
+	public static List<Integer> circularArrayRotation(List<Integer> a, int k, List<Integer> queries) {
+		// perform a number of right circular rotations and return the values of the elements at the given indices
+		List<Integer> results = new ArrayList<>();
+		// rotated array
+		int n = a.size();
+		Integer[] rotatedArray = new Integer[n];
+		for (int idx = 0; idx < n; idx++) {
+			// rotate index by k rotations find updated index by finding remainder
+			// (0 + 2) % 5 = 2
+			// (1 + 2) % 5 = 3
+			// (2 + 2) % 5 = 4
+			// (3 + 2) % 5 = 0
+			// (4 + 2) % 5 = 1
+			int rIdx = (idx + k) % n;
+			rotatedArray[rIdx] = a.get(idx);
+		}
+
+		List<Integer> rotatedList = Arrays.asList(rotatedArray);
+		for (int queryIdx : queries) {
+			results.add(rotatedList.get(queryIdx));
+		}
+
+		return results;
+
 	}
 
 }

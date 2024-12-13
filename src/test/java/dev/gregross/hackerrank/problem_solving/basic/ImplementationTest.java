@@ -336,4 +336,28 @@ class ImplementationTest {
 		assertEquals(3, Implementation.saveThePrisoner(3, 7, 3));
 	}
 
+	@Test
+	void testCircularArrayRotation() {
+		List<Integer> a = Arrays.asList(3, 4, 5);
+		int k = 2;
+		List<Integer> queries = Arrays.asList(1, 2);
+		List<Integer> expected = Arrays.asList(5, 3);
+		List<Integer> result = Implementation.circularArrayRotation(a, k, queries);
+		assertEquals(expected, result);
+
+		a = Arrays.asList(1, 2, 3);
+		k = 1;
+		queries = Arrays.asList(0, 1, 2);
+		expected = Arrays.asList(3, 1, 2);
+		result = Implementation.circularArrayRotation(a, k, queries);
+		assertEquals(expected, result);
+
+		a = Arrays.asList(1, 2, 3, 4, 5);
+		k = 3;
+		queries = Arrays.asList(0, 2, 4);
+		expected = Arrays.asList(3, 5, 2);
+		result = Implementation.circularArrayRotation(a, k, queries);
+		assertEquals(expected, result);
+	}
+
 }
