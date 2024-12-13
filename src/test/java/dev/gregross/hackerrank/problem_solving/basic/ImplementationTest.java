@@ -392,4 +392,12 @@ class ImplementationTest {
 			result = Implementation.jumpingOnClouds(clouds, k);
 			assertEquals(expected, result);
 	}
+
+	@Test
+	void testFindDigits() {
+			assertEquals(2, Implementation.findDigits(12));
+			assertEquals(3, Implementation.findDigits(1012));
+			assertEquals(0, Implementation.findDigits(0));
+			assertEquals(1, Implementation.findDigits(1));
+	}
 }

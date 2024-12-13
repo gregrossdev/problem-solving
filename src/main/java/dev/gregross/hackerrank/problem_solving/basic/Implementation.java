@@ -490,7 +490,6 @@ public class Implementation {
 	}
 
 	// https://www.hackerrank.com/challenges/jumping-on-the-clouds-revisited/problem?isFullScreen=true
-	// Complete the jumpingOnClouds function below.
 	public static int jumpingOnClouds(int[] c, int k) {
 		int n = c.length;
 		int energy = 100; // Initial energy level
@@ -507,6 +506,20 @@ public class Implementation {
 		} while (i != 0); // Repeat until reaching the starting cloud
 
 		return energy;
+	}
+
+	// https://www.hackerrank.com/challenges/find-digits/problem?isFullScreen=true
+	public static int findDigits(int n) {
+		// Given an integer, for each digit that makes up the integer determine whether it is a divisor. Count the number of divisors occurring within the integer.
+		int countDivisors = 0;
+		// convert int to string to get values in an array
+		String nStr = Integer.toString(n);
+		for(int idx = 0; idx < nStr.length(); idx++) {
+			int number = Character.getNumericValue(nStr.charAt(idx));
+			if(number != 0 && n % number == 0) countDivisors++;
+		}
+
+		return countDivisors;
 	}
 
 }
