@@ -245,5 +245,11 @@ class ImplementationTest {
 			assertEquals(expected, result);
 	}
 
+	@Test
+	void testCatAndMouse() {
+			assertEquals("Cat B", Implementation.catAndMouse(1, 2, 3));
+			assertEquals("Mouse C", Implementation.catAndMouse(1, 3, 2));
+			assertEquals("Cat A", Implementation.catAndMouse(2, 5, 1));
+	}
 
 }
