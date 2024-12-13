@@ -522,4 +522,28 @@ public class Implementation {
 		return countDivisors;
 	}
 
+	// https://www.hackerrank.com/challenges/append-and-delete/problem?isFullScreen=true
+	public static String appendAndDelete(String s, String t, int k) {
+		if (s.length() + t.length() <= k) return "Yes";
+
+		int lengthOfCommonSubstring = 0;
+		for (int i = 0; i < s.length() && i < t.length() ; i++) {
+			if (s.charAt(i) == t.charAt(i)) {
+				lengthOfCommonSubstring++;
+				continue;
+			}
+			break;
+		}
+
+		int minNecessaryOperations = (s.length() - lengthOfCommonSubstring) + (t.length() - lengthOfCommonSubstring);
+		if (minNecessaryOperations > k) return "No";
+		if (minNecessaryOperations == k) return "Yes";
+
+		int restOperations = k - minNecessaryOperations;
+
+		if (lengthOfCommonSubstring * 2 >= restOperations) return restOperations % 2 == 0 ? "Yes" : "No";
+
+		return "Yes";
+	}
+
 }

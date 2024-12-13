@@ -400,4 +400,13 @@ class ImplementationTest {
 			assertEquals(0, Implementation.findDigits(0));
 			assertEquals(1, Implementation.findDigits(1));
 	}
+
+	@Test
+	void testAppendAndDelete() {
+			assertEquals("Yes", Implementation.appendAndDelete("hackerhappy", "hackerrank", 9));
+			assertEquals("Yes", Implementation.appendAndDelete("aba", "aba", 7));
+			assertEquals("No", Implementation.appendAndDelete("ashley", "ash", 2));
+			assertEquals("Yes", Implementation.appendAndDelete("abc", "def", 6));
+	}
+
 }
