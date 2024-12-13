@@ -321,4 +321,10 @@ class ImplementationTest {
 			assertEquals(33, Implementation.beautifulDays(13, 45, 3));
 	}
 
+	@Test
+	void testViralAdvertising() {
+		assertEquals(9, Implementation.viralAdvertising(3));
+		assertEquals(24, Implementation.viralAdvertising(5));
+		assertEquals(15, Implementation.viralAdvertising(4));
+	}
 }
