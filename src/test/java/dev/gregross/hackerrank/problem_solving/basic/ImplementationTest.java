@@ -208,4 +208,12 @@ class ImplementationTest {
 			assertEquals(expected, result);
 	}
 
+	@Test
+	void testPageCount() {
+			assertEquals(1, Implementation.pageCount(6, 2));
+			assertEquals(0, Implementation.pageCount(5, 4));
+	}
+
+
+
 }
