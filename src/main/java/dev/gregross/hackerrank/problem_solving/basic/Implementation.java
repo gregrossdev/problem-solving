@@ -1,7 +1,9 @@
 package dev.gregross.hackerrank.problem_solving.basic;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Implementation {
 
@@ -168,6 +170,29 @@ public class Implementation {
 		}
 
 		return count;
+	}
+
+	// https://www.hackerrank.com/challenges/migratory-birds/problem?isFullScreen=true
+	public static int migratoryBirds(List<Integer> arr) {
+		Map<Integer, Integer> count = new HashMap<>();
+		// create count occurrences object
+		for (int birdId : arr) {
+			count.put(birdId, count.getOrDefault(birdId, 0) + 1);
+		}
+
+		int bird = -1;
+		int maxCount = 0;
+
+		for (Map.Entry<Integer, Integer> entry: count.entrySet()) {
+			int birdType  = entry.getKey();
+			int birdCount = entry.getValue();
+			if (birdCount > maxCount || (birdCount == maxCount && birdType < bird)) {
+				bird = birdType;
+				maxCount = birdCount;
+			}
+		}
+
+		return bird;
 	}
 
 

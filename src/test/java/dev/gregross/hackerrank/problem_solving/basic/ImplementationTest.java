@@ -105,7 +105,6 @@ class ImplementationTest {
 			assertEquals(expected, result);
 	}
 
-
 	@Test
 	void testDivisibleSumPairs() {
 			List<Integer> ar = Arrays.asList(1, 3, 2, 6, 1, 2);
@@ -129,4 +128,24 @@ class ImplementationTest {
 			result = Implementation.divisibleSumPairs(n, k, ar);
 			assertEquals(expected, result);
 	}
+
+	@Test
+	void testMigratoryBirds() {
+			List<Integer> arr = Arrays.asList(1, 1, 2, 2, 3);
+			int expected = 1;
+			int result = Implementation.migratoryBirds(arr);
+			assertEquals(expected, result);
+
+			arr = Arrays.asList(1, 4, 4, 4, 5, 3);
+			expected = 4;
+			result = Implementation.migratoryBirds(arr);
+			assertEquals(expected, result);
+
+			arr = Arrays.asList(1, 1, 2, 2, 3, 3, 3);
+			expected = 3;
+			result = Implementation.migratoryBirds(arr);
+			assertEquals(expected, result);
+	}
+
+
 }
