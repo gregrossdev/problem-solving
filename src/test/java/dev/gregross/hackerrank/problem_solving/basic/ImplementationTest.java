@@ -67,4 +67,17 @@ class ImplementationTest {
 			result = Implementation.getTotalX(a, b);
 			assertEquals(expected, result);
 	}
+
+	@Test
+	void testBreakingRecords() {
+			List<Integer> scores = Arrays.asList(10, 5, 20, 20, 4, 5, 2, 25, 1);
+			List<Integer> expected = Arrays.asList(2, 4);
+			List<Integer> result = Implementation.breakingRecords(scores);
+			assertEquals(expected, result);
+
+			scores = Arrays.asList(3, 4, 21, 36, 10, 28, 35, 5, 24, 42);
+			expected = Arrays.asList(4, 0);
+			result = Implementation.breakingRecords(scores);
+			assertEquals(expected, result);
+	}
 }

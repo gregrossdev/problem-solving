@@ -103,5 +103,32 @@ public class Implementation {
 		return a * (b / gcd(a, b));
 	}
 
+	// https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem?isFullScreen=true
+	public static List<Integer> breakingRecords(List<Integer> scores) {
+		// count number of games either max or min points were scored
+		List<Integer> records = new ArrayList<>();
+
+		int maxCount = 0;
+		int minCount = 0;
+		int maxScore = scores.get(0);
+		int minScore = scores.get(0);
+
+		for (int score : scores) {
+			if(score < minScore) {
+				minScore = score;
+				minCount++;
+			}
+			if(score > maxScore) {
+				maxScore = score;
+				maxCount++;
+			}
+		}
+
+		records.add(maxCount);
+		records.add(minCount);
+
+		return records;
+	}
+
 
 }
