@@ -269,4 +269,20 @@ class ImplementationTest {
 			result = Implementation.pickingNumbers(a);
 			assertEquals(expected, result);
 	}
+
+	@Test
+	void testDesignerPdfViewer() {
+			List<Integer> h = Arrays.asList(1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5);
+			String word = "abc";
+			int expected = 9;
+			int result = Implementation.designerPdfViewer(h, word);
+			assertEquals(expected, result);
+
+			h = Arrays.asList(1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7);
+			word = "zaba";
+			expected = 28;
+			result = Implementation.designerPdfViewer(h, word);
+			assertEquals(expected, result);
+	}
+
 }
