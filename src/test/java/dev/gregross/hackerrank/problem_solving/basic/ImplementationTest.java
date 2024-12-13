@@ -360,4 +360,22 @@ class ImplementationTest {
 		assertEquals(expected, result);
 	}
 
+	@Test
+	void testPermutationEquation() {
+			List<Integer> p = Arrays.asList(5, 2, 1, 3, 4);
+			List<Integer> expected = Arrays.asList(4, 2, 5, 1, 3);
+			List<Integer> result = Implementation.permutationEquation(p);
+			assertEquals(expected, result);
+
+			p = Arrays.asList(2, 3, 1);
+			expected = Arrays.asList(2, 3, 1);
+			result = Implementation.permutationEquation(p);
+			assertEquals(expected, result);
+
+			p = Arrays.asList(4, 3, 5, 1, 2);
+			expected = Arrays.asList(1, 3, 5, 4, 2);
+			result = Implementation.permutationEquation(p);
+			assertEquals(expected, result);
+	}
+
 }
