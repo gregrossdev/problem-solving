@@ -294,4 +294,25 @@ class ImplementationTest {
 			assertEquals(14, Implementation.utopianTree(5));
 	}
 
+	@Test
+	void testAngryProfessor() {
+			List<Integer> arrivalTimes = Arrays.asList(-1, -3, 4, 2);
+			int k = 3;
+			String expected = "YES";
+			String result = Implementation.angryProfessor(k, arrivalTimes);
+			assertEquals(expected, result);
+
+			arrivalTimes = Arrays.asList(-1, -3, 4, 2);
+			k = 2;
+			expected = "NO";
+			result = Implementation.angryProfessor(k, arrivalTimes);
+			assertEquals(expected, result);
+
+			arrivalTimes = Arrays.asList(0, -1, 2, 1);
+			k = 2;
+			expected = "NO";
+			result = Implementation.angryProfessor(k, arrivalTimes);
+			assertEquals(expected, result);
+	}
+
 }
