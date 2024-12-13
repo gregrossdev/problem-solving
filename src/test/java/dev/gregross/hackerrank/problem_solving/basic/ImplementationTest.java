@@ -327,4 +327,13 @@ class ImplementationTest {
 		assertEquals(24, Implementation.viralAdvertising(5));
 		assertEquals(15, Implementation.viralAdvertising(4));
 	}
+
+	@Test
+	void testSaveThePrisoner() {
+		assertEquals(2, Implementation.saveThePrisoner(5, 2, 1));
+		assertEquals(3, Implementation.saveThePrisoner(5, 2, 2));
+		assertEquals(6, Implementation.saveThePrisoner(7, 19, 2));
+		assertEquals(3, Implementation.saveThePrisoner(3, 7, 3));
+	}
+
 }
