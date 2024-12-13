@@ -221,4 +221,29 @@ class ImplementationTest {
 			assertEquals(0, Implementation.countingValleys(10, "UUUUUUUUUU"));
 	}
 
+	@Test
+	void testGetMoneySpent() {
+			int[] keyboards = {40, 50, 60};
+			int[] drives = {5, 8, 12};
+			int b = 60;
+			int expected = 58;
+			int result = Implementation.getMoneySpent(keyboards, drives, b);
+			assertEquals(expected, result);
+
+			keyboards = new int[]{4};
+			drives = new int[]{5};
+			b = 5;
+			expected = -1;
+			result = Implementation.getMoneySpent(keyboards, drives, b);
+			assertEquals(expected, result);
+
+			keyboards = new int[]{3, 1};
+			drives = new int[]{5, 2, 8};
+			b = 10;
+			expected = 9;
+			result = Implementation.getMoneySpent(keyboards, drives, b);
+			assertEquals(expected, result);
+	}
+
+
 }

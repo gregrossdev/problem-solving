@@ -275,4 +275,22 @@ public class Implementation {
 		return count;
 	}
 
+	// https://www.hackerrank.com/challenges/electronics-shop/problem?isFullScreen=true
+	public static int getMoneySpent(int[] keyboards, int[] drives, int b) {
+		// determine most expensive keyboard and usb drive within a given budget
+		int max = -1;
+
+		// loop through both lists and check all combinations
+		for (int keyboardPrice : keyboards) {
+			for (int drivePrice : drives) {
+				int price = keyboardPrice + drivePrice;
+
+				if (price <= b && price > max)
+					max = price;
+			}
+		}
+
+		return max;
+	}
+
 }
