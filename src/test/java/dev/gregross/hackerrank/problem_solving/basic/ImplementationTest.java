@@ -80,4 +80,30 @@ class ImplementationTest {
 			result = Implementation.breakingRecords(scores);
 			assertEquals(expected, result);
 	}
+
+	@Test
+	void testBirthday() {
+			List<Integer> s = Arrays.asList(2, 2, 1, 3, 2);
+			int d = 4;
+			int m = 2;
+			int expected = 2;
+			int result = Implementation.birthday(s, d, m);
+			assertEquals(expected, result);
+
+			s = Arrays.asList(1, 2, 1, 3, 2);
+			d = 3;
+			m = 2;
+			expected = 2;
+			result = Implementation.birthday(s, d, m);
+			assertEquals(expected, result);
+
+			s = Arrays.asList(1, 1, 1, 1, 1, 1);
+			d = 3;
+			m = 2;
+			expected = 0;
+			result = Implementation.birthday(s, d, m);
+			assertEquals(expected, result);
+	}
+
+
 }
