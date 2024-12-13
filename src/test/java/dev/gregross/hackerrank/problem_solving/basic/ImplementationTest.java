@@ -252,4 +252,21 @@ class ImplementationTest {
 			assertEquals("Cat A", Implementation.catAndMouse(2, 5, 1));
 	}
 
+	@Test
+	void testPickingNumbers() {
+			List<Integer> a = Arrays.asList(4, 6, 5, 3, 3, 1);
+			int expected = 3;
+			int result = Implementation.pickingNumbers(a);
+			assertEquals(expected, result);
+
+			a = Arrays.asList(1, 2, 2, 3, 1, 2);
+			expected = 5;
+			result = Implementation.pickingNumbers(a);
+			assertEquals(expected, result);
+
+			a = Arrays.asList(1, 1, 1, 1, 1);
+			expected = 5;
+			result = Implementation.pickingNumbers(a);
+			assertEquals(expected, result);
+	}
 }
