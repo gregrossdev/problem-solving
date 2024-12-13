@@ -442,4 +442,12 @@ class ImplementationTest {
 		result = Implementation.cutTheSticks(arr);
 		assertEquals(expected, result);
 	}
+
+	@Test
+	void testRepeatedString() {
+		assertEquals(7, Implementation.repeatedString("aba", 10));
+		assertEquals(1000000000000L, Implementation.repeatedString("a", 1000000000000L));
+		assertEquals(0, Implementation.repeatedString("b", 1000000000000L));
+	}
+
 }
