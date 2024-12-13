@@ -187,5 +187,25 @@ class ImplementationTest {
 			assertEquals(expectedOutput, outContent.toString());
 	}
 
+	@Test
+	void testSockMerchant() {
+			List<Integer> ar = Arrays.asList(10, 20, 20, 10, 10, 30, 50, 10, 20);
+			int n = 9;
+			int expected = 3;
+			int result = Implementation.sockMerchant(n, ar);
+			assertEquals(expected, result);
+
+			ar = Arrays.asList(1, 2, 1, 2, 1, 3, 2);
+			n = 7;
+			expected = 2;
+			result = Implementation.sockMerchant(n, ar);
+			assertEquals(expected, result);
+
+			ar = Arrays.asList(1, 1, 1, 1, 1, 1);
+			n = 6;
+			expected = 3;
+			result = Implementation.sockMerchant(n, ar);
+			assertEquals(expected, result);
+	}
 
 }
