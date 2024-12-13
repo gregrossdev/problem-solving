@@ -468,4 +468,22 @@ class ImplementationTest {
 		assertEquals(expected, result);
 	}
 
+	@Test
+	void testEqualizeArray() {
+		List<Integer> arr = Arrays.asList(3, 3, 2, 1, 3);
+		int expected = 2;
+		int result = Implementation.equalizeArray(arr);
+		assertEquals(expected, result);
+
+		arr = Arrays.asList(1, 2, 2, 3);
+		expected = 2;
+		result = Implementation.equalizeArray(arr);
+		assertEquals(expected, result);
+
+		arr = Arrays.asList(1, 1, 1, 1);
+		expected = 0;
+		result = Implementation.equalizeArray(arr);
+		assertEquals(expected, result);
+	}
+
 }
