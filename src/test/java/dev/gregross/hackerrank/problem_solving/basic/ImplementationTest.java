@@ -315,4 +315,10 @@ class ImplementationTest {
 			assertEquals(expected, result);
 	}
 
+	@Test
+	void testBeautifulDays() {
+			assertEquals(2, Implementation.beautifulDays(20, 23, 6));
+			assertEquals(33, Implementation.beautifulDays(13, 45, 3));
+	}
+
 }
