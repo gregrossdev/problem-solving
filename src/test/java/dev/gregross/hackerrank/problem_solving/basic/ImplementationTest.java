@@ -378,4 +378,18 @@ class ImplementationTest {
 			assertEquals(expected, result);
 	}
 
+	@Test
+	void testJumpingOnClouds() {
+			int[] clouds = {0, 0, 1, 0, 0, 1, 1, 0};
+			int k = 2;
+			int expected = 92;
+			int result = Implementation.jumpingOnClouds(clouds, k);
+			assertEquals(expected, result);
+
+			clouds = new int[]{1, 1, 1, 0, 1, 1, 0, 0, 0, 0};
+			k = 3;
+			expected = 80;
+			result = Implementation.jumpingOnClouds(clouds, k);
+			assertEquals(expected, result);
+	}
 }
