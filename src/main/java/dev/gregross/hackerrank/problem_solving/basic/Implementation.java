@@ -157,5 +157,18 @@ public class Implementation {
 		return count;
 	}
 
+	// https://www.hackerrank.com/challenges/divisible-sum-pairs/problem?isFullScreen=true
+	public static int divisibleSumPairs(int n, int k, List<Integer> ar) {
+		// count the number of pairs that are divisible by k
+		int count = 0;
+		for (int i = 0; i < ar.size(); i++) {
+			for (int j = i + 1; j < ar.size(); j++) {
+				if ((ar.get(i) + ar.get(j)) % k == 0) count++;
+			}
+		}
+
+		return count;
+	}
+
 
 }

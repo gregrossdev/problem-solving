@@ -106,4 +106,27 @@ class ImplementationTest {
 	}
 
 
+	@Test
+	void testDivisibleSumPairs() {
+			List<Integer> ar = Arrays.asList(1, 3, 2, 6, 1, 2);
+			int n = 6;
+			int k = 3;
+			int expected = 5;
+			int result = Implementation.divisibleSumPairs(n, k, ar);
+			assertEquals(expected, result);
+
+			ar = Arrays.asList(1, 2, 3, 4, 5, 6);
+			n = 6;
+			k = 5;
+			expected = 3;
+			result = Implementation.divisibleSumPairs(n, k, ar);
+			assertEquals(expected, result);
+
+			ar = Arrays.asList(1, 1, 1, 1, 1, 1);
+			n = 6;
+			k = 2;
+			expected = 15;
+			result = Implementation.divisibleSumPairs(n, k, ar);
+			assertEquals(expected, result);
+	}
 }
