@@ -156,4 +156,36 @@ class ImplementationTest {
 			assertEquals("13.09.2100", Implementation.dayOfProgrammer(2100));
 	}
 
+	@Test
+	void testBonAppetit() {
+			List<Integer> bill = Arrays.asList(3, 10, 2, 9);
+			int k = 1;
+			int b = 12;
+
+			ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+			System.setOut(new PrintStream(outContent));
+
+			Implementation.bonAppetit(bill, k, b);
+
+			System.setOut(System.out);
+
+			String expectedOutput = "5\n";
+			assertEquals(expectedOutput, outContent.toString());
+
+			bill = Arrays.asList(3, 10, 2, 9);
+			k = 1;
+			b = 7;
+
+			outContent = new ByteArrayOutputStream();
+			System.setOut(new PrintStream(outContent));
+
+			Implementation.bonAppetit(bill, k, b);
+
+			System.setOut(System.out);
+
+			expectedOutput = "Bon Appetit\n";
+			assertEquals(expectedOutput, outContent.toString());
+	}
+
+
 }
