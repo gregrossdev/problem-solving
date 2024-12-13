@@ -486,4 +486,16 @@ class ImplementationTest {
 		assertEquals(expected, result);
 	}
 
+	@Test
+	void testAcmTeam() {
+		List<String> topic = Arrays.asList("10101", "11100", "11010", "00101");
+		List<Integer> expected = Arrays.asList(5, 2);
+		List<Integer> result = Implementation.acmTeam(topic);
+		assertEquals(expected, result);
+
+		topic = Arrays.asList("11101", "10101", "11001", "10111", "10000", "01110");
+		expected = Arrays.asList(5, 6);
+		result = Implementation.acmTeam(topic);
+		assertEquals(expected, result);
+	}
 }

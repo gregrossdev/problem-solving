@@ -674,4 +674,38 @@ public class Implementation {
 
 	}
 
+	// https://www.hackerrank.com/challenges/acm-icpc-team/problem?isFullScreen=true
+	public static List<Integer> acmTeam(List<String> topic) {
+		// Find the maximum number of topics a 2-person team can know and the number of teams that know that number of topics
+		int n = topic.size();
+		int m = topic.get(0).length();
+
+		int maxTopics = 0;
+		int maxTeams = 0;
+
+		for (int i = 0; i < n; i++) {
+			String person1 = topic.get(i);
+			for (int j = i + 1; j < n; j++) {
+				String person2 = topic.get(j);
+
+				int topicsKnown = 0;
+				for (int k = 0; k < m; k++) {
+					if (person1.charAt(k) == '1' || person2.charAt(k) == '1') {
+						topicsKnown++;
+					}
+				}
+
+				if (topicsKnown > maxTopics) {
+					maxTopics = topicsKnown;
+					maxTeams = 1;
+				} else if (topicsKnown == maxTopics) {
+					maxTeams++;
+				}
+			}
+		}
+
+		return Arrays.asList(maxTopics, maxTeams);
+
+	}
+
 }
