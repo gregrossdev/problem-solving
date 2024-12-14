@@ -558,4 +558,11 @@ class ImplementationTest {
 		result = Implementation.minimumDistances(a);
 		assertEquals(expected, result);
 	}
+
+	@Test
+	void testHowManyGames() {
+		assertEquals(6, Implementation.howManyGames(20, 3, 6, 80));
+		assertEquals(1, Implementation.howManyGames(20, 3, 6, 20));
+		assertEquals(0, Implementation.howManyGames(20, 3, 6, 19));
+	}
 }
