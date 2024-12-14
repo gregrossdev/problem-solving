@@ -506,4 +506,17 @@ class ImplementationTest {
 			assertEquals(12, Implementation.taumBday(3, 6, 9, 1, 1));
 			assertEquals(12, Implementation.taumBday(3, 3, 1, 9, 2));
 	}
+
+	@Test
+	void testKaprekarNumbers() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+
+		Implementation.kaprekarNumbers(1, 100);
+
+		System.setOut(System.out);
+
+		String expectedOutput = "1 9 45 55 99";
+		assertEquals(expectedOutput, outContent.toString().trim());
+	}
 }
