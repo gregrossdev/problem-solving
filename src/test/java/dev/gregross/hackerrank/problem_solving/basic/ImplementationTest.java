@@ -572,4 +572,29 @@ class ImplementationTest {
 		assertEquals(6, Implementation.chocolateFeast(10, 2, 5));
 		assertEquals(1, Implementation.chocolateFeast(1, 1, 2));
 	}
+
+	@Test
+	void testServiceLane() {
+		List<Integer> width = Arrays.asList(2, 3, 1, 2, 3, 2, 3, 3);
+		List<List<Integer>> cases = Arrays.asList(
+			Arrays.asList(0, 3),
+			Arrays.asList(4, 6),
+			Arrays.asList(6, 7),
+			Arrays.asList(3, 5),
+			Arrays.asList(0, 7)
+		);
+		List<Integer> expected = Arrays.asList(1, 2, 3, 2, 1);
+		List<Integer> result = Implementation.serviceLane(8, width, cases);
+		assertEquals(expected, result);
+
+		width = Arrays.asList(1, 2, 2, 2, 1);
+		cases = Arrays.asList(
+			Arrays.asList(2, 3),
+			Arrays.asList(1, 4),
+			Arrays.asList(2, 4)
+		);
+		expected = Arrays.asList(2, 1, 1);
+		result = Implementation.serviceLane(5, width, cases);
+		assertEquals(expected, result);
+	}
 }
