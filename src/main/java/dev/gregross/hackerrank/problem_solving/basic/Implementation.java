@@ -838,4 +838,26 @@ public class Implementation {
 		return maxWidth;
 	}
 
+	// https://www.hackerrank.com/challenges/lisa-workbook/problem?isFullScreen=true
+	public static int workbook(int n, int k, List<Integer> arr) {
+		// Find the number of special problems in Lisa's workbook
+		int specialProblems = 0;
+		int pageNumber = 1;
+
+		for (int i = 0; i < n; i++) {
+			int problems = arr.get(i);
+			for (int j = 1; j <= problems; j++) {
+				if (j == pageNumber) {
+					specialProblems++;
+				}
+				if (j == problems || j % k == 0) {
+					pageNumber++;
+				}
+			}
+		}
+
+		return specialProblems;
+
+	}
+
 }

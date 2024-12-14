@@ -597,4 +597,22 @@ class ImplementationTest {
 		result = Implementation.serviceLane(5, width, cases);
 		assertEquals(expected, result);
 	}
+
+	@Test
+	void testWorkbook() {
+		List<Integer> arr = Arrays.asList(4, 2, 6, 1, 10);
+		int n = 5;
+		int k = 3;
+		int expected = 4;
+		int result = Implementation.workbook(n, k, arr);
+		assertEquals(expected, result);
+
+		arr = Arrays.asList(3, 8, 15, 11, 14, 1, 9, 2, 24, 31);
+		n = 10;
+		k = 5;
+		expected = 8;
+		result = Implementation.workbook(n, k, arr);
+		assertEquals(expected, result);
+
+	}
 }
