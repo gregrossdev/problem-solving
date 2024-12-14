@@ -662,4 +662,11 @@ class ImplementationTest {
 		result = Implementation.stones(4, 10, 100);
 		assertEquals(expected, result);
 	}
+
+	@Test
+	void testHappyLadybugs() {
+		assertEquals("YES", Implementation.happyLadybugs("RBY_YBR"));
+		assertEquals("NO", Implementation.happyLadybugs("X_Y__X"));
+		assertEquals("YES", Implementation.happyLadybugs("__"));
+	}
 }

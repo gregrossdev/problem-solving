@@ -933,4 +933,37 @@ public class Implementation {
 
 		return result;
 	}
+
+	// https://www.hackerrank.com/challenges/happy-ladybugs/problem?isFullScreen=true
+	public static String happyLadybugs(String b) {
+		// Determine if the ladybugs can be made happy
+		int[] frequency = new int[26];
+		boolean hasEmptyCell = false;
+
+		for (char cell : b.toCharArray()) {
+			if (cell == '_') {
+				hasEmptyCell = true;
+			} else {
+				frequency[cell - 'A']++;
+			}
+		}
+
+		if (!hasEmptyCell) {
+			for (int i = 0; i < b.length(); i++) {
+				char cell = b.charAt(i);
+				if ((i == 0 || b.charAt(i - 1) != cell) && (i == b.length() - 1 || b.charAt(i + 1) != cell)) {
+					return "NO";
+				}
+			}
+		}
+
+		for (int count : frequency) {
+			if (count == 1) {
+				return "NO";
+			}
+		}
+
+		return "YES";
+
+	}
 }
