@@ -881,4 +881,41 @@ public class Implementation {
 
 	}
 
+	// https://www.hackerrank.com/challenges/cavity-map/problem?isFullScreen=true
+	public static List<String> cavityMap(List<String> grid) {
+		// Find and mark the cavities in the grid
+		List<String> result = new ArrayList<>();
+		int n = grid.size();
+
+		for (int i = 0; i < n; i++) {
+			if (i == 0 || i == n - 1) {
+				result.add(grid.get(i));
+				continue;
+			}
+
+			StringBuilder row = new StringBuilder();
+			row.append(grid.get(i).charAt(0));
+
+			for (int j = 1; j < n - 1; j++) {
+				int current = Character.getNumericValue(grid.get(i).charAt(j));
+				int top = Character.getNumericValue(grid.get(i - 1).charAt(j));
+				int bottom = Character.getNumericValue(grid.get(i + 1).charAt(j));
+				int left = Character.getNumericValue(grid.get(i).charAt(j - 1));
+				int right = Character.getNumericValue(grid.get(i).charAt(j + 1));
+
+				if (current > top && current > bottom && current > left && current > right) {
+					row.append('X');
+				} else {
+					row.append(grid.get(i).charAt(j));
+				}
+			}
+
+			row.append(grid.get(i).charAt(n - 1));
+			result.add(row.toString());
+		}
+
+		return result;
+
+	}
+
 }

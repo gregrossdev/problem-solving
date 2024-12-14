@@ -633,4 +633,22 @@ class ImplementationTest {
 		result = Implementation.fairRations(B);
 		assertEquals(expected, result);
 	}
+
+	@Test
+	void testCavityMap() {
+		List<String> grid = Arrays.asList("1112", "1912", "1892", "1234");
+		List<String> expected = Arrays.asList("1112", "1X12", "18X2", "1234");
+		List<String> result = Implementation.cavityMap(grid);
+		assertEquals(expected, result);
+
+		grid = Arrays.asList("989", "191", "111");
+		expected = Arrays.asList("989", "1X1", "111");
+		result = Implementation.cavityMap(grid);
+		assertEquals(expected, result);
+
+		grid = Arrays.asList("12", "34");
+		expected = Arrays.asList("12", "34");
+		result = Implementation.cavityMap(grid);
+		assertEquals(expected, result);
+	}
 }
