@@ -27,4 +27,11 @@ class StringsTest {
 		assertEquals("okffng-Qwvb", Strings.caesarCipher("middle-Outz", 2));
 		assertEquals("Fqbfdx-Qttp-ts-ymj-Gwnlmy-Xnij-tk-Qnkj", Strings.caesarCipher("Always-Look-on-the-Bright-Side-of-Life", 5));
 	}
+
+	@Test
+	void testMarsExploration() {
+		assertEquals(3, Strings.marsExploration("SOSSPSSQSSOR"));
+		assertEquals(1, Strings.marsExploration("SOSSOT"));
+		assertEquals(0, Strings.marsExploration("SOSSOS"));
+	}
 }

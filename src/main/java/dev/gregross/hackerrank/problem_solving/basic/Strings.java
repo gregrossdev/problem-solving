@@ -1,5 +1,8 @@
 package dev.gregross.hackerrank.problem_solving.basic;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Strings {
 
 	// https://www.hackerrank.com/challenges/camelcase/problem?isFullScreen=true
@@ -80,5 +83,23 @@ public class Strings {
 		System.out.println(encrypted);
 
 		return encrypted;
+	}
+
+	// https://www.hackerrank.com/challenges/mars-exploration/problem?isFullScreen=true
+	public static int marsExploration(String s) {
+		Map<Integer, Character> sosMap = new HashMap<>();
+
+		sosMap.put(0, 'S');
+		sosMap.put(1, 'O');
+		sosMap.put(2, 'S');
+
+		int count = 0;
+
+		for(int idx = 0; idx < s.length(); idx++) {
+			int key = idx % 3;
+			if(s.charAt(idx) != sosMap.get(key)) count++;
+		}
+
+		return count;
 	}
 }
