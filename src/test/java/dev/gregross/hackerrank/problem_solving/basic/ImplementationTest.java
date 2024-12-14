@@ -541,5 +541,21 @@ class ImplementationTest {
 		assertEquals(expected, result);
 	}
 
+	@Test
+	void testMinimumDistances() {
+		List<Integer> a = Arrays.asList(7, 1, 3, 4, 1, 7);
+		int expected = 3;
+		int result = Implementation.minimumDistances(a);
+		assertEquals(expected, result);
 
+		a = Arrays.asList(1, 2, 3, 4, 10);
+		expected = -1;
+		result = Implementation.minimumDistances(a);
+		assertEquals(expected, result);
+
+		a = Arrays.asList(1, 1);
+		expected = 1;
+		result = Implementation.minimumDistances(a);
+		assertEquals(expected, result);
+	}
 }

@@ -770,4 +770,25 @@ public class Implementation {
 		return count;
 	}
 
+	// https://www.hackerrank.com/challenges/minimum-distances/problem?isFullScreen=true
+	public static int minimumDistances(List<Integer> a) {
+		// Find the minimum distance between any two equal elements in the array
+		int minDistance = Integer.MAX_VALUE;
+		Map<Integer, Integer> map = new HashMap<>();
+
+		for (int i = 0; i < a.size(); i++) {
+			int num = a.get(i);
+
+			if (map.containsKey(num)) {
+				int distance = i - map.get(num);
+				minDistance = Math.min(minDistance, distance);
+			}
+
+			map.put(num, i);
+		}
+
+		return minDistance == Integer.MAX_VALUE ? -1 : minDistance;
+
+	}
+
 }
