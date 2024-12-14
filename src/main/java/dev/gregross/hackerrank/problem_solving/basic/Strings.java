@@ -54,4 +54,31 @@ public class Strings {
 		else return Math.max(6 - n, valid);
 
 	}
+
+	// https://www.hackerrank.com/challenges/caesar-cipher-1/problem?isFullScreen=true
+	public static String caesarCipher(String s, int k) {
+		String encrypted = "";
+		// rotate letters by k factor
+		for (int idx = 0; idx < s.length(); idx++) {
+			// add k to each character
+			char letter  = s.charAt(idx);
+			// character or not
+			if(Character.isLetter(letter)) {
+				// uppercase or not
+				char type = Character.isUpperCase(letter) ? 'A' : 'a';
+				char encryptedLetter = (char) ((letter - type + k) % 26 + type);
+				// int asciiValuePlusK = (int) letter + k;
+				// char encryptedLetter = (char) asciiValuePlusK;
+				encrypted += encryptedLetter;
+			}
+			else {
+				encrypted += letter;
+			}
+		}
+		// returns encrypted string
+
+		System.out.println(encrypted);
+
+		return encrypted;
+	}
 }

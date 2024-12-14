@@ -21,4 +21,10 @@ class StringsTest {
 		assertEquals(0, Strings.minimumNumber(6, "Ab1!@#"));
 		assertEquals(0, Strings.minimumNumber(6, "aB1!@"));
 	}
+
+	@Test
+	void testCaesarCipher() {
+		assertEquals("okffng-Qwvb", Strings.caesarCipher("middle-Outz", 2));
+		assertEquals("Fqbfdx-Qttp-ts-ymj-Gwnlmy-Xnij-tk-Qnkj", Strings.caesarCipher("Always-Look-on-the-Bright-Side-of-Life", 5));
+	}
 }
