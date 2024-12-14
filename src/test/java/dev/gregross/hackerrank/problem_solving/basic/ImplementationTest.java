@@ -498,4 +498,12 @@ class ImplementationTest {
 		result = Implementation.acmTeam(topic);
 		assertEquals(expected, result);
 	}
+
+	@Test
+	void testTaumBday() {
+			assertEquals(20, Implementation.taumBday(10, 10, 1, 1, 1));
+			assertEquals(37, Implementation.taumBday(5, 9, 2, 3, 4));
+			assertEquals(12, Implementation.taumBday(3, 6, 9, 1, 1));
+			assertEquals(12, Implementation.taumBday(3, 3, 1, 9, 2));
+	}
 }

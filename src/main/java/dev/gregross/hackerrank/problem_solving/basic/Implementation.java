@@ -708,4 +708,20 @@ public class Implementation {
 
 	}
 
+	// https://www.hackerrank.com/challenges/taum-and-bday/problem?isFullScreen=true
+	public static long taumBday(int b, int w, int bc, int wc, int z) {
+		// Calculate the minimum cost to purchase the gifts
+		long cost = 0;
+
+		// Calculate the cost of black and white gifts
+		long blackCost = Math.min(bc, wc + z);
+		long whiteCost = Math.min(wc, bc + z);
+
+		// Calculate the total cost
+		cost = (long) b * blackCost + (long) w * whiteCost;
+
+		return cost;
+
+	}
+
 }
