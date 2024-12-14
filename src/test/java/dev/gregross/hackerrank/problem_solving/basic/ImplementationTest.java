@@ -669,4 +669,10 @@ class ImplementationTest {
 		assertEquals("NO", Implementation.happyLadybugs("X_Y__X"));
 		assertEquals("YES", Implementation.happyLadybugs("__"));
 	}
+
+	@Test
+	void testStrangeCounter() {
+		assertEquals(6, Implementation.strangeCounter(4));
+		assertEquals(5, Implementation.strangeCounter(17));
+	}
 }

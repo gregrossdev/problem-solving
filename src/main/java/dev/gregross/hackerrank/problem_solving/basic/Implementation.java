@@ -966,4 +966,16 @@ public class Implementation {
 		return "YES";
 
 	}
+
+	// https://www.hackerrank.com/challenges/strange-code/problem?isFullScreen=true
+	public static long strangeCounter(long t) {
+		// Calculate the value of the counter at time t
+		long cycle = 3;
+		while (t > cycle) {
+			t -= cycle;
+			cycle *= 2;
+		}
+
+		return cycle - t + 1;
+	}
 }
