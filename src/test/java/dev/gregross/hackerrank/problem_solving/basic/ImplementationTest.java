@@ -565,4 +565,11 @@ class ImplementationTest {
 		assertEquals(1, Implementation.howManyGames(20, 3, 6, 20));
 		assertEquals(0, Implementation.howManyGames(20, 3, 6, 19));
 	}
+
+	@Test
+	void testChocolateFeast() {
+		assertEquals(9, Implementation.chocolateFeast(15, 3, 2));
+		assertEquals(6, Implementation.chocolateFeast(10, 2, 5));
+		assertEquals(1, Implementation.chocolateFeast(1, 1, 2));
+	}
 }

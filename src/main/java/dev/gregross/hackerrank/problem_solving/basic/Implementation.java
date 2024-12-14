@@ -807,4 +807,20 @@ public class Implementation {
 
 	}
 
+	// https://www.hackerrank.com/challenges/chocolate-feast/problem?isFullScreen=true
+	public static int chocolateFeast(int n, int c, int m) {
+		// Calculate the number of chocolates that can be bought with the given amount of money
+		int chocolates = n / c;
+		int wrappers = chocolates;
+
+		while (wrappers >= m) {
+			int freeChocolates = wrappers / m;
+			chocolates += freeChocolates;
+			wrappers = freeChocolates + (wrappers % m);
+		}
+
+		return chocolates;
+
+	}
+
 }
