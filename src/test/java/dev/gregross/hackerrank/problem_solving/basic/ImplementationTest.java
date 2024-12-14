@@ -615,4 +615,22 @@ class ImplementationTest {
 		assertEquals(expected, result);
 
 	}
+
+	@Test
+	void testFairRations() {
+		List<Integer> B = Arrays.asList(2, 3, 4, 5, 6);
+		String expected = "4";
+		String result = Implementation.fairRations(B);
+		assertEquals(expected, result);
+
+		B = Arrays.asList(1, 2);
+		expected = "NO";
+		result = Implementation.fairRations(B);
+		assertEquals(expected, result);
+
+		B = Arrays.asList(4, 5, 6, 7);
+		expected = "4";
+		result = Implementation.fairRations(B);
+		assertEquals(expected, result);
+	}
 }

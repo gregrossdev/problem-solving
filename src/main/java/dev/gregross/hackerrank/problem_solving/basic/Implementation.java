@@ -860,4 +860,25 @@ public class Implementation {
 
 	}
 
+	// https://www.hackerrank.com/challenges/fair-rations/problem?isFullScreen=true
+	public static String fairRations(List<Integer> B) {
+		// Find the minimum number of loaves required to distribute bread so that every person has an even number of loaves
+		int loaves = 0;
+
+		for (int i = 0; i < B.size() - 1; i++) {
+			if (B.get(i) % 2 != 0) {
+				B.set(i, B.get(i) + 1);
+				B.set(i + 1, B.get(i + 1) + 1);
+				loaves += 2;
+			}
+		}
+
+		if (B.get(B.size() - 1) % 2 != 0) {
+			return "NO";
+		} else {
+			return String.valueOf(loaves);
+		}
+
+	}
+
 }
