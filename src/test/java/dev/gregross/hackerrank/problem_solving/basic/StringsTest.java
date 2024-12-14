@@ -34,4 +34,12 @@ class StringsTest {
 		assertEquals(1, Strings.marsExploration("SOSSOT"));
 		assertEquals(0, Strings.marsExploration("SOSSOS"));
 	}
+
+	@Test
+	void testHackerrankInString() {
+		assertEquals("YES", Strings.hackerrankInString("hereiamstackerrank"));
+		assertEquals("NO", Strings.hackerrankInString("hackerworld"));
+		assertEquals("YES", Strings.hackerrankInString("hhaacckkekraraannk"));
+		assertEquals("NO", Strings.hackerrankInString("rhbaasdndfsdskgbfefdbrsdfhuyatrjtcrtyytktjjt"));
+	}
 }
