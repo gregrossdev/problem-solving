@@ -42,4 +42,12 @@ class StringsTest {
 		assertEquals("YES", Strings.hackerrankInString("hhaacckkekraraannk"));
 		assertEquals("NO", Strings.hackerrankInString("rhbaasdndfsdskgbfefdbrsdfhuyatrjtcrtyytktjjt"));
 	}
+
+	@Test
+	void testPangrams() {
+		assertEquals("pangram", Strings.pangrams("The quick brown fox jumps over the lazy dog"));
+		assertEquals("not pangram", Strings.pangrams("Hello world"));
+		assertEquals("pangram", Strings.pangrams("Pack my box with five dozen liquor jugs"));
+		assertEquals("not pangram", Strings.pangrams("This is not a pangram"));
+	}
 }
