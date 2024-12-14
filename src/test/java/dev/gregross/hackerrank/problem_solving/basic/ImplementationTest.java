@@ -651,4 +651,15 @@ class ImplementationTest {
 		result = Implementation.cavityMap(grid);
 		assertEquals(expected, result);
 	}
+
+	@Test
+	void testStones() {
+		List<Integer> expected = Arrays.asList(2, 3, 4);
+		List<Integer> result = Implementation.stones(3, 1, 2);
+		assertEquals(expected, result);
+
+		expected = Arrays.asList(30, 120, 210, 300);
+		result = Implementation.stones(4, 10, 100);
+		assertEquals(expected, result);
+	}
 }
