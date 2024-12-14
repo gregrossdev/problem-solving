@@ -519,4 +519,27 @@ class ImplementationTest {
 		String expectedOutput = "1 9 45 55 99";
 		assertEquals(expectedOutput, outContent.toString().trim());
 	}
+
+	@Test
+	void testBeautifulTriplets() {
+		List<Integer> arr = Arrays.asList(1, 2, 4, 5, 7, 8, 10);
+		int d = 3;
+		int expected = 3;
+		int result = Implementation.beautifulTriplets(d, arr);
+		assertEquals(expected, result);
+
+		arr = Arrays.asList(2, 2, 3, 4, 5);
+		d = 1;
+		expected = 3;
+		result = Implementation.beautifulTriplets(d, arr);
+		assertEquals(expected, result);
+
+		arr = Arrays.asList(1, 3, 5, 7, 9);
+		d = 2;
+		expected = 3;
+		result = Implementation.beautifulTriplets(d, arr);
+		assertEquals(expected, result);
+	}
+
+
 }
