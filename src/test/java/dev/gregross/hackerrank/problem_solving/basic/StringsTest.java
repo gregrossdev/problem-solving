@@ -153,4 +153,11 @@ class StringsTest {
 		assertEquals(19, Strings.makingAnagrams("absdjkvuahdakejfnfauhdsaavasdlkj", "djfladfhiawasdkjvalskufhafablsdkashlahdfa"));
 		assertEquals(1, Strings.makingAnagrams("a", "ab"));
 	}
+
+	@Test
+	void testGameOfThrones() {
+		assertEquals("YES", Strings.gameOfThrones("aaabbbb"));
+		assertEquals("NO", Strings.gameOfThrones("cdefghmnopqrstuvw"));
+		assertEquals("YES", Strings.gameOfThrones("cdcdcdcdeeeef"));
+	}
 }
