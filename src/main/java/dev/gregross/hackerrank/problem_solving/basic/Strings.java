@@ -10,8 +10,8 @@ public class Strings {
 		// count capital letters, first word given
 		int count = 1;
 
-		for(int idx = 0; idx < s.length(); idx++) {
-			if(Character.isUpperCase(s.charAt(idx))) count++;
+		for (int idx = 0; idx < s.length(); idx++) {
+			if (Character.isUpperCase(s.charAt(idx))) count++;
 		}
 
 		return count;
@@ -35,14 +35,11 @@ public class Strings {
 		for (char letter : password.toCharArray()) {
 			if (numbers.contains(String.valueOf(letter))) {
 				containsNumber = true;
-			}
-			else if (lowerCase.contains(String.valueOf(letter))) {
+			} else if (lowerCase.contains(String.valueOf(letter))) {
 				containsLowerCase = true;
-			}
-			else if (upperCase.contains(String.valueOf(letter))) {
+			} else if (upperCase.contains(String.valueOf(letter))) {
 				containsUpperCase = true;
-			}
-			else if (specialCharacters.contains(String.valueOf(letter))) {
+			} else if (specialCharacters.contains(String.valueOf(letter))) {
 				containsSpecialChar = true;
 			}
 		}
@@ -64,17 +61,16 @@ public class Strings {
 		// rotate letters by k factor
 		for (int idx = 0; idx < s.length(); idx++) {
 			// add k to each character
-			char letter  = s.charAt(idx);
+			char letter = s.charAt(idx);
 			// character or not
-			if(Character.isLetter(letter)) {
+			if (Character.isLetter(letter)) {
 				// uppercase or not
 				char type = Character.isUpperCase(letter) ? 'A' : 'a';
 				char encryptedLetter = (char) ((letter - type + k) % 26 + type);
 				// int asciiValuePlusK = (int) letter + k;
 				// char encryptedLetter = (char) asciiValuePlusK;
 				encrypted += encryptedLetter;
-			}
-			else {
+			} else {
 				encrypted += letter;
 			}
 		}
@@ -95,9 +91,9 @@ public class Strings {
 
 		int count = 0;
 
-		for(int idx = 0; idx < s.length(); idx++) {
+		for (int idx = 0; idx < s.length(); idx++) {
 			int key = idx % 3;
-			if(s.charAt(idx) != sosMap.get(key)) count++;
+			if (s.charAt(idx) != sosMap.get(key)) count++;
 		}
 
 		return count;
@@ -109,18 +105,18 @@ public class Strings {
 		String result = "NO";
 		String subSeq = "hackerrank";
 		// check lengths
-		if(s.length() < subSeq.length()) return result;
+		if (s.length() < subSeq.length()) return result;
 		// compare indices of both strings (2 pointers)
-		int sIdx      = 0;
+		int sIdx = 0;
 		int subSeqIdx = 0;
-		while(sIdx < s.length() && subSeqIdx < subSeq.length()) {
+		while (sIdx < s.length() && subSeqIdx < subSeq.length()) {
 			// if subSeq char is in string move to the next index of subSeq
-			if(subSeq.charAt(subSeqIdx) == s.charAt(sIdx)) subSeqIdx++;
+			if (subSeq.charAt(subSeqIdx) == s.charAt(sIdx)) subSeqIdx++;
 			sIdx++;
 		}
 
 		// check if subSeq index value is equal to the length
-		if(subSeqIdx == subSeq.length()) result = "YES";
+		if (subSeqIdx == subSeq.length()) result = "YES";
 
 		return result;
 	}
@@ -130,15 +126,15 @@ public class Strings {
 		// check if its a pangram meaning containing every letter of the alphabet
 		String notPangram = "not pangram";
 		// check if its over 26 characters
-		if(s.length() < 26) return notPangram;
+		if (s.length() < 26) return notPangram;
 		// normalize string to lowercase
 		s = s.toLowerCase();
 		// check if the string contains all the letters of the alphabet
 		String alphabet = "abcdefghijklmnopqrstuvwxyz";
 		// loop to check indices of the alphabet to the string indices
-		for(int idx = 0; idx < alphabet.length(); idx++) {
+		for (int idx = 0; idx < alphabet.length(); idx++) {
 			// if char in alphabet not found (-1) in string return result
-			if(s.indexOf(alphabet.charAt(idx)) == -1) return notPangram;
+			if (s.indexOf(alphabet.charAt(idx)) == -1) return notPangram;
 		}
 
 		return "pangram";
@@ -176,4 +172,36 @@ public class Strings {
 		}
 
 	}
+
+	// https://www.hackerrank.com/challenges/funny-string/problem?isFullScreen=true
+	public static String funnyString(String s) {
+		// Initialize the result as "Not Funny"
+		String result = "Not Funny";
+
+		// Loop through the string, but stop one character before the end
+		for (int i = 0; i < s.length() - 1; i++) {
+			// Calculate the absolute difference in ASCII values between the current character and the next one
+			char currentChar = s.charAt(i);
+			char nextChar = s.charAt(i + 1);
+			int sDiff = Math.abs(currentChar - nextChar);
+
+			// Calculate the absolute difference in ASCII values between the current character and the next one,
+			// but start from the end of the string and move towards the start
+			char currentCharFromEnd = s.charAt(s.length() - 1 - i);
+			char nextCharFromEnd = s.charAt(s.length() - 2 - i);
+			int rDiff = Math.abs(currentCharFromEnd - nextCharFromEnd);
+
+			// If the differences are not the same, return "Not Funny" immediately
+			if (sDiff != rDiff) {
+				return result;
+			}
+		}
+		// If we've gone through the entire string and the differences have always been the same,
+		// change the result to "Funny"
+		result = "Funny";
+
+		// Return the result
+		return result;
+	}
+
 }

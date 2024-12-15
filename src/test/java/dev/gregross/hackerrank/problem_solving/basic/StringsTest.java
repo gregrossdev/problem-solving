@@ -82,4 +82,11 @@ class StringsTest {
 		// Reset System.out to its original state
 		System.setOut(System.out);
 	}
+
+	@Test
+	void testFunnyString() {
+		assertEquals("Funny", Strings.funnyString("acxz"));
+		assertEquals("Not Funny", Strings.funnyString("bcxz"));
+		assertEquals("Funny", Strings.funnyString("abcdcba"));
+	}
 }
