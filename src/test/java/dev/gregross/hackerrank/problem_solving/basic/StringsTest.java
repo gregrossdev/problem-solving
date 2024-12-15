@@ -145,4 +145,12 @@ class StringsTest {
 		assertEquals(2, Strings.anagram("mnop"));
 		assertEquals(-1, Strings.anagram("abc"));
 	}
+
+	@Test
+	void testMakingAnagrams() {
+		assertEquals(4, Strings.makingAnagrams("cde", "abc"));
+		assertEquals(0, Strings.makingAnagrams("abc", "abc"));
+		assertEquals(19, Strings.makingAnagrams("absdjkvuahdakejfnfauhdsaavasdlkj", "djfladfhiawasdkjvalskufhafablsdkashlahdfa"));
+		assertEquals(1, Strings.makingAnagrams("a", "ab"));
+	}
 }
