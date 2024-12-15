@@ -301,4 +301,31 @@ public class Strings {
 		return -1;
 	}
 
+	// https://www.hackerrank.com/challenges/anagram/problem?isFullScreen=true
+	public static int anagram(String s) {
+		if (s.length() % 2 != 0) {
+			return -1;
+		}
+
+		int count = 0;
+		int split = s.length() / 2;
+		String sub1 = s.substring(0, split);
+		String sub2 = s.substring(split);
+		int[] charFreq1 = new int[26];
+		int[] charFreq2 = new int[26];
+		for(int idx = 0; idx < split; idx++) {
+			charFreq1[sub1.charAt(idx) - 'a']++;
+			charFreq2[sub2.charAt(idx) - 'a']++;
+		}
+
+		for(int idx = 0; idx < charFreq1.length; idx++) {
+			if(charFreq1[idx] > charFreq2[idx]) {
+				count += charFreq1[idx] - charFreq2[idx];
+			}
+		}
+
+		return count;
+
+	}
+
 }

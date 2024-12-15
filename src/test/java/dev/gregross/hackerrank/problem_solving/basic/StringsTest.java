@@ -135,4 +135,14 @@ class StringsTest {
 		assertEquals(-1, Strings.palindromeIndex("aaa"));
 		assertEquals(-1, Strings.palindromeIndex("racecar"));
 	}
+
+	@Test
+	void testAnagram() {
+		assertEquals(3, Strings.anagram("asdfjoieufoa"));
+		assertEquals(5, Strings.anagram("fdhlvosfpafhalll"));
+		assertEquals(5, Strings.anagram("mvdalvkiopaufl"));
+		assertEquals(0, Strings.anagram("xyyx"));
+		assertEquals(2, Strings.anagram("mnop"));
+		assertEquals(-1, Strings.anagram("abc"));
+	}
 }
