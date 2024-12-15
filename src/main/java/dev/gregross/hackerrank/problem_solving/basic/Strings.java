@@ -143,4 +143,37 @@ public class Strings {
 
 		return "pangram";
 	}
+
+	// https://www.hackerrank.com/challenges/separate-the-numbers/problem?isFullScreen=true
+	public static void separateNumbers(String s) {
+		boolean foundBeautiful = false;
+		long firstNumber = -1;
+
+		// Iterate through the string to find a beautiful sequence
+		for (int length = 1; length <= s.length() / 2; length++) {
+			long num = Long.parseLong(s.substring(0, length));
+			firstNumber = num;
+			String beautifulString = Long.toString(num);
+
+			// Generate the beautiful sequence based on the first number
+			while (beautifulString.length() < s.length()) {
+				num++;
+				beautifulString += Long.toString(num);
+			}
+
+			// Check if the generated sequence matches the input string
+			if (beautifulString.equals(s)) {
+				foundBeautiful = true;
+				break;
+			}
+		}
+
+		// Print the result
+		if (foundBeautiful) {
+			System.out.println("YES " + firstNumber);
+		} else {
+			System.out.println("NO");
+		}
+
+	}
 }
