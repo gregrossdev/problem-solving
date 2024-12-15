@@ -169,4 +169,11 @@ class StringsTest {
 		assertEquals("NO", Strings.twoStrings("abc", "def"));
 		assertEquals("YES", Strings.twoStrings("abc", "cde"));
 	}
+
+	@Test
+	void testStringConstruction() {
+		assertEquals(4, Strings.stringConstruction("abcd"));
+		assertEquals(1, Strings.stringConstruction("aaaa"));
+		assertEquals(5, Strings.stringConstruction("abcde"));
+	}
 }

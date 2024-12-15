@@ -388,4 +388,21 @@ public class Strings {
 		return "NO";
 	}
 
+	// https://www.hackerrank.com/challenges/string-construction/problem?isFullScreen=true
+	public static int stringConstruction(String s) {
+		int cost = 0;
+		// char freq in the string
+		int[] freq = new int[26];
+		// loop for characters of substrings
+		for (int idx = 0; idx < s.length(); idx++) {
+			freq[s.charAt(idx) - 'a']++;
+		}
+		// check if the string can be copied
+		for (int idx = 0; idx < 26; idx++) {
+			if (freq[idx] > 0) cost++;
+		}
+
+		return cost;
+	}
+
 }
