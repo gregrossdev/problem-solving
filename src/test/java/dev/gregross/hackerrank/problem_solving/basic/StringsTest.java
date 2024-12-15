@@ -127,4 +127,12 @@ class StringsTest {
 		assertEquals(0, Strings.theLoveLetterMystery("racecar"));
 		assertEquals(2, Strings.theLoveLetterMystery("cba"));
 	}
+
+	@Test
+	void testPalindromeIndex() {
+		assertEquals(3, Strings.palindromeIndex("aaab"));
+		assertEquals(0, Strings.palindromeIndex("baa"));
+		assertEquals(-1, Strings.palindromeIndex("aaa"));
+		assertEquals(-1, Strings.palindromeIndex("racecar"));
+	}
 }

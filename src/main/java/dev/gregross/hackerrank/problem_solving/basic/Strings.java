@@ -278,4 +278,27 @@ public class Strings {
 
 	}
 
+	// https://www.hackerrank.com/challenges/palindrome-index/problem?isFullScreen=true
+	public static int palindromeIndex(String s) {
+		// check if the string is a palindrome
+		int idx = 0;
+		int endIdx = s.length() - 1;
+		// loop through the string
+		while (idx < endIdx) {
+			// compare the characters from the start and end of the string
+			if (s.charAt(idx) != s.charAt(endIdx)) {
+				// check if the string is a palindrome if the character at the start is removed
+				if (s.charAt(idx + 1) == s.charAt(endIdx) && s.charAt(idx + 2) == s.charAt(endIdx - 1)) {
+					return idx;
+				}
+				else {
+					return endIdx;
+				}
+			}
+			idx++;
+			endIdx--;
+		}
+		return -1;
+	}
+
 }
