@@ -160,4 +160,13 @@ class StringsTest {
 		assertEquals("NO", Strings.gameOfThrones("cdefghmnopqrstuvw"));
 		assertEquals("YES", Strings.gameOfThrones("cdcdcdcdeeeef"));
 	}
+
+	@Test
+	void testTwoStrings() {
+		assertEquals("YES", Strings.twoStrings("hello", "world"));
+		assertEquals("NO", Strings.twoStrings("hi", "world"));
+		assertEquals("YES", Strings.twoStrings("a", "a"));
+		assertEquals("NO", Strings.twoStrings("abc", "def"));
+		assertEquals("YES", Strings.twoStrings("abc", "cde"));
+	}
 }

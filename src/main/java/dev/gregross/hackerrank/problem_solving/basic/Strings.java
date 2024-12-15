@@ -370,4 +370,22 @@ public class Strings {
 
 	}
 
+	// https://www.hackerrank.com/challenges/two-strings/problem?isFullScreen=true
+	public static String twoStrings(String s1, String s2) {
+		// char freq in the string
+		int[] freq = new int[26];
+		// loop for characters of substrings
+		for (int idx = 0; idx < s1.length(); idx++) {
+			freq[s1.charAt(idx) - 'a']++;
+		}
+		// check if the strings share a common substring
+		for (int idx = 0; idx < s2.length(); idx++) {
+			if (freq[s2.charAt(idx) - 'a'] > 0) {
+				return "YES";
+			}
+		}
+
+		return "NO";
+	}
+
 }
