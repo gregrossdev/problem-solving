@@ -231,4 +231,18 @@ public class Strings {
 
 	}
 
+	// https://www.hackerrank.com/challenges/alternating-characters/problem?isFullScreen=true
+	public static int alternatingCharacters(String s) {
+		// find the minimum number of required deletions so that there are no matching adjacent characters.
+		int minDeletes = 0;
+		// check if the string has adjacent characters
+		for (int idx = 0; idx < s.length() - 1; idx++) {
+			// if the characters are the same increment the minDeletes
+			if (s.charAt(idx) == s.charAt(idx + 1)) minDeletes++;
+		}
+
+		return minDeletes;
+
+	}
+
 }

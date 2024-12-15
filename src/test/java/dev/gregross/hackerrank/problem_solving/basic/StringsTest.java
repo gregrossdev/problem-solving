@@ -102,4 +102,12 @@ class StringsTest {
 		assertEquals(1, Strings.gemstones(Arrays.asList("abc", "bcd", "cde")));
 		assertEquals(3, Strings.gemstones(Arrays.asList("xyz", "xyz", "xyz")));
 	}
+
+	@Test
+	void testAlternatingCharacters() {
+		assertEquals(6, Strings.alternatingCharacters("AAABBBAABB"));
+		assertEquals(3, Strings.alternatingCharacters("ABBABBAA"));
+		assertEquals(4, Strings.alternatingCharacters("AAABBB"));
+		assertEquals(1, Strings.alternatingCharacters("ABABABAA"));
+	}
 }
