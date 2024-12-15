@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -58,29 +60,32 @@ class StringsTest {
 	void testSeparateNumbers() {
 		// Redirect System.out to capture the output
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		PrintStream originalOut = System.out;
 		System.setOut(new PrintStream(outContent));
 
-		Strings.separateNumbers("1234");
-		assertEquals("YES 1\n", outContent.toString());
+		try {
+			Strings.separateNumbers("1234");
+			assertEquals("YES 1\n", outContent.toString());
 
-		outContent.reset();
-		Strings.separateNumbers("91011");
-		assertEquals("YES 9\n", outContent.toString());
+			outContent.reset();
+			Strings.separateNumbers("91011");
+			assertEquals("YES 9\n", outContent.toString());
 
-		outContent.reset();
-		Strings.separateNumbers("99100");
-		assertEquals("YES 99\n", outContent.toString());
+			outContent.reset();
+			Strings.separateNumbers("99100");
+			assertEquals("YES 99\n", outContent.toString());
 
-		outContent.reset();
-		Strings.separateNumbers("101103");
-		assertEquals("NO\n", outContent.toString());
+			outContent.reset();
+			Strings.separateNumbers("101103");
+			assertEquals("NO\n", outContent.toString());
 
-		outContent.reset();
-		Strings.separateNumbers("010203");
-		assertEquals("NO\n", outContent.toString());
-
-		// Reset System.out to its original state
-		System.setOut(System.out);
+			outContent.reset();
+			Strings.separateNumbers("010203");
+			assertEquals("NO\n", outContent.toString());
+		} finally {
+			// Reset System.out to its original state
+			System.setOut(originalOut);
+		}
 	}
 
 	@Test
@@ -88,5 +93,13 @@ class StringsTest {
 		assertEquals("Funny", Strings.funnyString("acxz"));
 		assertEquals("Not Funny", Strings.funnyString("bcxz"));
 		assertEquals("Funny", Strings.funnyString("abcdcba"));
+	}
+
+	@Test
+	void testGemstones() {
+		assertEquals(2, Strings.gemstones(Arrays.asList("abcdde", "baccd", "eeabg")));
+		assertEquals(0, Strings.gemstones(Arrays.asList("abc", "def", "ghi")));
+		assertEquals(1, Strings.gemstones(Arrays.asList("abc", "bcd", "cde")));
+		assertEquals(3, Strings.gemstones(Arrays.asList("xyz", "xyz", "xyz")));
 	}
 }

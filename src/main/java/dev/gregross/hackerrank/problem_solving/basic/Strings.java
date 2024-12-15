@@ -1,6 +1,7 @@
 package dev.gregross.hackerrank.problem_solving.basic;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Strings {
@@ -202,6 +203,32 @@ public class Strings {
 
 		// Return the result
 		return result;
+	}
+
+	// https://www.hackerrank.com/challenges/gem-stones/problem?isFullScreen=true
+	public static int gemstones(List<String> arr) {
+		// display the number of types of gemstones in the collection
+		int countTypes = 0;
+		// check if the gemstone is in all the strings
+		String alphabet = "abcdefghijklmnopqrstuvwxyz";
+		// loop through the alphabet
+		int idx = 0;
+		while(idx < alphabet.length()) {
+			// check if the gemstone is in all the strings
+			boolean isGemstone = true;
+			for (String rock : arr) {
+				if (rock.indexOf(alphabet.charAt(idx)) == -1) {
+					isGemstone = false;
+					break;
+				}
+			}
+			if (isGemstone) countTypes++;
+			// next letter
+			idx++;
+		}
+
+		return countTypes;
+
 	}
 
 }
