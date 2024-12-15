@@ -245,4 +245,20 @@ public class Strings {
 
 	}
 
+	// https://www.hackerrank.com/challenges/beautiful-binary-string/problem?isFullScreen=true
+	public static int beautifulBinaryString(String b) {
+		int count = 0;
+		// check for the substring "010" in the string
+		for (int idx = 0; idx < b.length() - 2; idx++) {
+			if (b.substring(idx, idx + 3).equals("010")) {
+				// increment the count and move the index by 2
+				count++;
+				idx += 2;
+			}
+		}
+
+		return count;
+
+	}
+
 }

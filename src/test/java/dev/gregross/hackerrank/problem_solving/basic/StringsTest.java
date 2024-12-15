@@ -110,4 +110,12 @@ class StringsTest {
 		assertEquals(4, Strings.alternatingCharacters("AAABBB"));
 		assertEquals(1, Strings.alternatingCharacters("ABABABAA"));
 	}
+
+	@Test
+	void testBeautifulBinaryString() {
+		assertEquals(2, Strings.beautifulBinaryString("0101010"));
+		assertEquals(0, Strings.beautifulBinaryString("1111111"));
+		assertEquals(1, Strings.beautifulBinaryString("010"));
+		assertEquals(3, Strings.beautifulBinaryString("0100101010"));
+	}
 }
