@@ -118,4 +118,13 @@ class StringsTest {
 		assertEquals(1, Strings.beautifulBinaryString("010"));
 		assertEquals(3, Strings.beautifulBinaryString("0100101010"));
 	}
+
+	@Test
+	void testTheLoveLetterMystery() {
+		assertEquals(2, Strings.theLoveLetterMystery("abc"));
+		assertEquals(0, Strings.theLoveLetterMystery("aaa"));
+		assertEquals(4, Strings.theLoveLetterMystery("abcd"));
+		assertEquals(0, Strings.theLoveLetterMystery("racecar"));
+		assertEquals(2, Strings.theLoveLetterMystery("cba"));
+	}
 }
